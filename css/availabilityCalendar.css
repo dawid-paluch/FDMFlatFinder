@@ -1,0 +1,77 @@
+#calendarContainer{
+    z-index: 10;
+    background-color: rgba(180,180,180,0.8);
+    border-radius: 15px;
+    width: 40%;
+    height: 500px;
+    margin: 300px auto;
+    padding: 10px;
+}
+
+#calendarHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#weekdays, #days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#days {
+    height: 210px;
+}
+
+#weekdays div, #days div {
+    width: 13.49%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: solid 3px transparent;
+}
+
+#days div {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#days .active:hover {
+    border-color: #98cde5;
+    color: rgb(184, 117, 36);
+}
+
+#days .selected {
+    color: #98cde5;
+    background-color: rgb(184, 117, 36);
+}
+
+#days .selected:hover {
+    border-color: black;
+    color: #98cdef;
+}
+
+#days .fade, .disabled {
+    color: #888;
+    cursor: not-allowed;
+}
+
+.checkbox{
+    display: none;
+}
+
+#submit{
+    bottom: 0;
+}
