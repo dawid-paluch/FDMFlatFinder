@@ -10,6 +10,14 @@
     margin: 300px auto;
 }
 
+#formContainer a{
+    border-radius: 15px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    border: solid 3px transparent;
+    text-decoration: none;
+    color: black;
+}
+
 #formContainer h1{
     grid-column: 1/ span 2;
     text-align: center;
@@ -42,20 +50,12 @@ button:active, #formContainer a:active{
     border-radius: 15px;
 }
 
-#userType-buttons{
-    grid-column: 1/ span 2;
-    width: 100%;
+#detailtype-buttons {
     display: flex;
-}
-
-#userType-buttons p, #userType-buttons a{
-    font-size: 16px;
-    display: block;
-    width: 20%;
-    padding: 10px 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
+    flex-direction: row;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px;
 }
 
 #consultant-button{
