@@ -21,11 +21,13 @@ if (isset($_POST['register'])) {
         $email = validate($_POST['email']);
         $password = validate($_POST['password']);
         $role = validate($_POST['role']);
+        $age = validate($_POST['age']);
+        $location = validate($_POST['location']); 
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // inserts data into database
-        $sql = "INSERT INTO fdm_users(username, email, password, role) VALUES ('$username', '$email', '$hashedPassword', '$role')";
+        $sql = "INSERT INTO fdm_users(username, email, password, role, age, location) VALUES ('$username', '$email', '$hashedPassword', '$role', '$age', '$location')";
         $query = mysqli_query($conn, $sql);
 
         if ($query) {
