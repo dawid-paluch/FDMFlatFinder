@@ -1,9 +1,5 @@
 //Loading calender with current month and year as well as the appropriate days for the month.
 document.addEventListener('DOMContentLoaded', function () {
-    // This checks if availability exists in localStorage and if not, sets it to an empty string.
-    if (localStorage.getItem('availability') == null) {
-        localStorage.setItem('availability', "");
-    }
 
     // Sets common variables for the calendar
     const monthYear = document.getElementById('month-year');
@@ -14,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'July', 'August', 'September', 'October', 'November', 'December'];
 
     let currentDate = new Date();
+    console.log(currentDate);
     let today = new Date();
 
     // Function to render the calendar
@@ -123,11 +120,17 @@ document.addEventListener('DOMContentLoaded', function () {
 function changeUponSelect(div, checkbox) {
     if (checkbox.checked == true) {
         div.classList.add('selected');
+        if (localStorage.getItem('availability') == "") {
+            localStorage.setItem('availability', JSON.stringify([]));
+        }
         var selected = JSON.parse(localStorage.getItem('availability'));
         selected.push(checkbox.value);
         localStorage.setItem('availability', JSON.stringify(selected));
     }
     else{
+        if (localStorage.getItem('availability') == "") {
+            localStorage.setItem('availability', JSON.stringify([]));
+        }
         div.classList.remove('selected');
         var selected = JSON.parse(localStorage.getItem('availability'));
         var index = selected.indexOf(checkbox.value);
@@ -138,8 +141,14 @@ function changeUponSelect(div, checkbox) {
 
 // Function to check if a date has been selected
 function checkIfDateSelected(date) {
+    if (localStorage.getItem('availability') == "") {
+        return false;
+    }
     if (JSON.parse(localStorage.getItem('availability')).includes(date)) {
         return true;
     }
     return false;
 }
+
+// Function must be added to store the avaialability data of local storage into the value of the hidden input field
+// This function will be called when the form is submitted

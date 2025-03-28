@@ -2,9 +2,9 @@
     z-index: 10;
     background-color: rgba(180,180,180,0.8);
     border-radius: 15px;
-    width: 40%;
+    /* width: 40%;
+    margin: 300px auto; */
     height: 500px;
-    margin: 300px auto;
     padding: 10px;
 }
 
@@ -15,7 +15,7 @@
     padding: 10px;
 }
 
-button {
+#calendarContainer button {
     background-color: transparent;
     cursor: pointer;
     font-size: 35px;
@@ -23,7 +23,7 @@ button {
 
 #month-year {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #weekdays, #days {
@@ -75,3 +75,5 @@ button {
 #submit{
     bottom: 0;
 }
+
+/* The css for availability calendar should be changed more appropriately to make sense and not clash with the css for the rest of the list property page */
