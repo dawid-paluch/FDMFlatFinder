@@ -1,9 +1,6 @@
 #calendarContainer{
-    z-index: 10;
     background-color: rgba(180,180,180,0.8);
     border-radius: 15px;
-    /* width: 40%;
-    margin: 300px auto; */
     height: 500px;
     padding: 10px;
 }
@@ -76,4 +73,20 @@
     bottom: 0;
 }
 
-/* The css for availability calendar should be changed more appropriately to make sense and not clash with the css for the rest of the list property page */
+#buttonContainer button{
+    border-radius: 15px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    border: solid 3px transparent;
+    text-decoration: none;
+    color: black;
+}
+
+#buttonContainer button:hover{
+    border-color: rgb(184, 117, 36);
+
+}
+
+#buttonContainer button:active{
+    background-color:#98cde5;
+    border-color: transparent;
+}

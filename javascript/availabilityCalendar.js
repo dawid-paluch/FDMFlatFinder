@@ -1,3 +1,5 @@
+localStorage.setItem('availability', JSON.stringify([]));
+
 //Loading calender with current month and year as well as the appropriate days for the month.
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -152,3 +154,11 @@ function checkIfDateSelected(date) {
 
 // Function must be added to store the avaialability data of local storage into the value of the hidden input field
 // This function will be called when the form is submitted
+document.getElementById('listPropertyForm').addEventListener('submit', function (event) {
+    let availability = JSON.parse(localStorage.getItem('availability'));
+    document.getElementById('availability').value = availability;
+});
+
+function disableScroll(event) {
+    event.preventDefault();
+}

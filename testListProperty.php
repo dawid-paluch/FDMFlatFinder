@@ -34,7 +34,10 @@
         <div id="listPropertyContainer">
             <?php
                 
-                $address = $_POST["address"];
+                $addressLine1 = $_POST["addressLine1"];
+                $addressLine2 = $_POST["addressLine2"];
+                $town = $_POST["addressCityTown"];
+                $postcode = $_POST["addressPostcode"];
                 $description = $_POST["description"];
                 $price = $_POST["price"];
                 $bedrooms = $_POST["bedrooms"];
@@ -44,7 +47,10 @@
                 $hidden = $_POST["availability"];
 
                 echo "<h1>Property Details</h1>";
-                echo "<p>Address: $address</p>";
+                echo "<p>Address Line 1: $addressLine1</p>";
+                echo "<p>Address Line 2: $addressLine2</p>";
+                echo "<p>Town: $town</p>";
+                echo "<p>Postcode: $postcode</p>";
                 echo "<p>Description: $description</p>";
                 echo "<p>Price: $price</p>";
                 echo "<p>Bedrooms: $bedrooms</p>";
