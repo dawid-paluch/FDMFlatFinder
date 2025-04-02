@@ -31,26 +31,20 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="login.php">
+        <form method="POST" action="otp.php">
             <div id="formContainer">
                 <h1>
-                    Login as Consultant
+                    Enter OTP
                 </h1>
                 <div id="userType-buttons">
-                    <p id="consultant-button">FDMConsultant</p>
-                    <a id="landlord-button" href="loginLandlord.html">Landlord</a>
+                    <p id="consultant-button">OTP</p>
                 </div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter Email" required>
-    
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                <input type="hidden" name="role" value="consultant">
+                <label for="otp">OTP:</label>
+                <input type = "text" name = "otp"  placeholder = "Enter OTP" required>
+        
                 <div id="submit-buttons">
-                    <button type="reset" id="clear-button">Clear Form</button>
-                    <button type="submit" id="submit-button">Login</button>
-                    <a href = "registerConsultant.html">Register</a>
-               </div>
+                    <button type = "submit">Verify OTP</button>
+                </div>
             </div>
         </form> 
     </div>
