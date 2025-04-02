@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/login.css" />
-
-  <title>FDM FlatFinder</title>
+  <title>FDM Flat Finder</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.php">Login</a>
+                <a href="loginConsultant.html">Login</a>
             </nav>
         </div>
         </div>
@@ -32,27 +32,32 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="login.php">
+        <form method="POST" action="register.php">
             <div id="formContainer">
                 <h1>
-                    Login as Landlord
+                    Register as Landlord
                 </h1>
                 <div id="userType-buttons">
-                    <a id="consultant-button" href="loginConsultant.html">FDMConsultant</a>
+                    <a id="consultant-button" href="registerConsultant.html">FDMConsultant</a>
                     <p id="landlord-button">Landlord</p>
                 </div>
-                <label for="email">Email:</label>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter Email" required>
+    
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                <input type="hidden" name="role" value="landlord">
-    
+                
+                <input type = "hidden" name = "role" value = "landlord">
+
                 <div id="submit-buttons">
                     <button type="reset" id="clear-button">Clear Form</button>
-                    <button type="submit" id="submit-button">Login</button>
+                    <button type="submit" name="register" id="submit-button">Register</button>
                 </div>
                 <div id="alternativeAccess">
-                    <p><a href = "registerLandlord.html">Register as a Consultant</a></p>
+                    <p>Already have an account?<a href = "loginLandlord.html">Login as Landlord</a></p>
                </div>
             </div>
         </form> 
