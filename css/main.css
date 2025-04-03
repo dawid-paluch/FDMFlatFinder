@@ -1,8 +1,8 @@
 :root {
     --dark-color: #303030;
     --light-color: #a8a8a8;
-    --primary-color: #98cde5;
-    --accent-color: rgb(184, 117, 36);
+    --primary-color: #c6ff00;
+    --accent-color: #1e1e1e;
     --dark-accent-color: #2e3d72;
 }
 
@@ -49,7 +49,7 @@ header{
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--primary-color);
 }
 
 #nav{

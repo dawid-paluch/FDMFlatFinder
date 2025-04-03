@@ -31,11 +31,11 @@
 }
 
 #landlordHomepageContainer a:hover{
-    border-color: rgb(184, 117, 36);
+    border-color: #1e1e1e;
 
 }
 
 #landlordHomepageContainer a:active{
-    background-color:#98cde5;
+    background-color:#c6ff00;
     border-color: transparent;
 }

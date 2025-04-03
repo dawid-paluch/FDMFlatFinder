@@ -46,18 +46,18 @@
 }
 
 #days .active:hover {
-    border-color: #98cde5;
-    color: rgb(184, 117, 36);
+    border-color: #1e1e1e;
+    color: #c6ff00;
 }
 
 #days .selected {
-    color: #98cde5;
-    background-color: rgb(184, 117, 36);
+    color: #1e1e1e;
+    background-color: #c6ff00;
 }
 
 #days .selected:hover {
     border-color: black;
-    color: #98cdef;
+    color: gray;
 }
 
 #days .fade, .disabled {
@@ -82,11 +82,11 @@
 }
 
 #buttonContainer button:hover{
-    border-color: rgb(184, 117, 36);
+    border-color: #1e1e1e;
 
 }
 
 #buttonContainer button:active{
-    background-color:#98cde5;
+    background-color: #c6ff00;
     border-color: transparent;
 }
