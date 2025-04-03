@@ -35,32 +35,32 @@
     <div id="main">
         <div id="listPropertyContainer">
             <h1>List Property</h1>
-            <form action="testListProperty.php" method="post" enctype="multipart/form-data" id="listPropertyForm">
-                <label for="addressLine1">Address Line 1:</label>
+            <form action="listProperty.php" method="post" enctype="multipart/form-data" id="listPropertyForm">
+                <label for="addressLine1">Address Line 1:<div class="requiredAsterisk">*</div></label>
                 <input type="text" id="addressLine1" name="addressLine1" placeholder="Enter Address Line 1" required>
 
                 <label for="addressLine2">Address Line 2:</label>
                 <input type="text" id="addressLine2" name="addressLine2" placeholder="Enter Address Line 2">
                 
-                <label for="addressCityTown">City/Town:</label>
+                <label for="addressCityTown">City/Town:<div class="requiredAsterisk">*</div></label>
                 <input type="text" id="addressCityTown" name="addressCityTown" placeholder="Enter City/Town" required>
                 
-                <label for="addressPostcode">Postcode:</label>
+                <label for="addressPostcode">Postcode:<div class="requiredAsterisk">*</div></label>
                 <input type="text" id="addressPostcode" name="addressPostcode" placeholder="Enter Postcode" required>
 
-                <label for="description">Description:</label>
+                <label for="description">Description:<div class="requiredAsterisk">*</div></label>
                 <textarea id="description" name="description" placeholder="Enter Property Description" rows="4" required></textarea>
 
-                <label for="price">Price (£):</label>
+                <label for="price">Price (£):<div class="requiredAsterisk">*</div></label>
                 <input type="number" id="price" name="price" placeholder="Enter Price" min="100" step="0.01" onwheel="disableScroll(event)" required>
 
-                <label for="bedrooms">Bedrooms:</label>
+                <label for="bedrooms">Bedrooms:<div class="requiredAsterisk">*</div></label>
                 <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Number of Bedrooms" min="1" onwheel="disableScroll(event)" required>
 
-                <label for="bathrooms">Bathrooms:</label>
-                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter Number of Bathrooms" max="1" onwheel="disableScroll(event)" required>
+                <label for="bathrooms">Bathrooms:<div class="requiredAsterisk">*</div></label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter Number of Bathrooms" min="1" onwheel="disableScroll(event)" required>
 
-                <label for="type">Type:</label>
+                <label for="type">Type:<div class="requiredAsterisk">*</div></label>
                 <select id="type" name="type" required>
                     <option value="house">House</option>
                     <option value="apartment">Apartment</option>
@@ -70,10 +70,12 @@
 
                 <!--error checking must be added to the various inputs to ensure that they make sense given their context-->
 
-                <label for="image">Image:</label>
+                <label for="image">Image:<div class="requiredAsterisk">*</div></label>
                 <input type="file" id="image" name="image" accept="image/*" required />
                 
                 <input type="hidden" id="availability" name="availability"required **form="listPropertyForm"**/>
+
+                <label for="availability" id="availabilityLabel">Availability Calendar:</label>
 
                 <div id="calendarContainer">
                     <div id="calendarHead">
@@ -95,7 +97,7 @@
 
                 <div id="buttonContainer">
                     <button type="reset" id="clearButton">Clear Form</button>
-                    <button type="submit" id="submitButton">Send</button>
+                    <button type="submit" name="listProperty" id="submitButton">Send</button>
                 </div>
             </form>
         </div>

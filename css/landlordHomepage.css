@@ -1,0 +1,41 @@
+#landlordHomepageContainer{
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    z-index: 10;
+    background-color: rgba(180,180,180,0.8);
+    border-radius: 15px;
+    width: 40%;
+    height: 70%;
+    padding-right: 10px;
+    transform: translateX(-50%);
+}
+
+#landlordHomepageContainer h1{
+    text-align: center;
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+#landlordHomepageContainer a{
+    display: block;
+    border-radius: 15px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    border: solid 3px transparent;
+    text-decoration: none;
+    color: black;
+    width: 80%;
+    padding: 2%;
+    margin: auto;
+    text-align: center;
+}
+
+#landlordHomepageContainer a:hover{
+    border-color: rgb(184, 117, 36);
+
+}
+
+#landlordHomepageContainer a:active{
+    background-color:#98cde5;
+    border-color: transparent;
+}
