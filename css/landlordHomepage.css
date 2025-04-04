@@ -20,7 +20,7 @@
 #landlordHomepageContainer a{
     display: block;
     border-radius: 15px;
-    background-color:  rgba(210, 210, 210, 0.4);
+    background-color:  rgba(210, 210, 210, 0.6);
     border: solid 3px transparent;
     text-decoration: none;
     color: black;
@@ -28,6 +28,7 @@
     padding: 2%;
     margin: auto;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 #landlordHomepageContainer a:hover{
