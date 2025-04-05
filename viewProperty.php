@@ -38,6 +38,7 @@
             <h1>
                 List of Properties Page
             </h1>
+            <div id="returnButtonDiv"><a href="landlordHomePage.html">Return to Landlord Menu</a></div>
             <?php
             include 'connection.php';
 

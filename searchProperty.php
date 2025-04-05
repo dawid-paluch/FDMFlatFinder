@@ -76,6 +76,7 @@
             <h1>
                 Search for Property
             </h1>
+            <div id="returnButtonDiv"><a href="consultantHomePage.html">Return to Consultant Menu</a></div>
             <?php
                 include 'connection.php';
 

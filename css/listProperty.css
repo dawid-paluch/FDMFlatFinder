@@ -13,10 +13,35 @@ h1 {
     padding-top: 5%;
 }
 
+#returnButtonDiv > a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    text-align: center;
+    border: solid 3px transparent;
+}
+
+#returnButtonDiv > a:hover{
+    border-color: black;
+}
+
+#returnButtonDiv > a:active{
+    background-color: #c6ff00;
+    color: black;
+    border-color: transparent;
+}
+
 form{
     display: grid;
     grid-template-columns: 25% 75%;
     margin: 5%;
+    margin-top: 0;
 }
 
 form label, form input, form textarea, form select{
