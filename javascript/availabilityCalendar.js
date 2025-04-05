@@ -158,7 +158,3 @@ document.getElementById('listPropertyForm').addEventListener('submit', function 
     let availability = JSON.parse(localStorage.getItem('availability'));
     document.getElementById('availability').value = availability;
 });
-
-function disableScroll(event) {
-    event.preventDefault();
-}

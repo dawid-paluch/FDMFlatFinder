@@ -25,7 +25,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.html">Login</a>
+                <a href="logout.php">Logout</a>
             </nav>
         </div>
         </div>
@@ -64,7 +64,7 @@
                     echo "<p class='tableField line1Field'>" . $row['addressLine1'] . "</p>";
                     echo "<p class='tableField cityTownField'>" . $row['addressCityTown'] . "</p>";
                     echo "<p class='tableField postcodeField'>" . $row['addressPostcode'] . "</p>";
-                    echo "<p class='tableField priceRow'>" . $row['price'] . "</p>";
+                    echo "<p class='tableField priceRow'>£" . number_format($row['price']) . "</p>";
                     echo "</div>";
                     echo "</button>";
                 }
