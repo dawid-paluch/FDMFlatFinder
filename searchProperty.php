@@ -80,7 +80,7 @@
             <?php
                 include 'connection.php';
 
-                $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, price FROM propertyList";
+                $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, description, type, bedrooms, bathrooms, price, image_name, dateUpdated FROM propertyList";
 
                 if (!empty($_POST)) {
                     $sql = $sql . " WHERE";
@@ -126,23 +126,35 @@
                     die("Query failed: " . mysqli_error($conn));
                 }
                 if (mysqli_num_rows($query) == 0) {
-                    echo "No properties found for this user.";
+                    echo "No properties found according to these requirements.";
                     exit;
                 }
 
                 if ($query -> num_rows > 0) {
                     echo "<div id='tableContainer'>";
                     echo "<form>";
-                    echo "<div id='tableHead'><p class='tableField line1Field'>Address</p><p class='tableField cityTownField'>City/Town</p><p class='tableField postcodeField'>Postcode</p><p class='tableField priceRow'>Price (£)</p></div>";
                     while ($row = mysqli_fetch_assoc($query)) {
                         echo "<div class='tableRow'>";
-                        echo "<button class='tableButton' type='submit' name='propertyId' value='" . $row['propertyId'] . "'></button>";
-                        echo "<p class='tableField line1Field'>" . $row['addressLine1'] . "</p>";
-                        echo "<p class='tableField cityTownField'>" . $row['addressCityTown'] . "</p>";
-                        echo "<p class='tableField postcodeField'>" . $row['addressPostcode'] . "</p>";
-                        echo "<p class='tableField priceRow'>£" . number_format($row['price']) . "</p>";
+                            echo "<div class='imageField'><img src='uploads/".$row['image_name']."' alt='Property Image'></div>";
+                            echo "<div class='propertyInfo'>";
+                                echo "<button class='propertyDetailsButton' type='button' name='propertyDetailsButton' value='" . $row['propertyId'] . "'>";
+                                    echo "<div class='propertyDetailsButtonDiv'>";
+                                        echo "<p class='addressField'>" . strtoupper($row['addressLine1']) . ", " . strtoupper($row['addressCityTown']) . ", " . strtoupper($row['addressPostcode']) . "</p>";
+                                        echo "<div class='detailsField'>";
+                                            echo "<p class='priceRow'}>Price: £" . number_format($row['price']) . "</p>";
+                                            echo "<p class='typeRow'>Type: " . ucfirst($row['type']) . "</p>";
+                                            echo "<p class='bedroomsRow'>Bedrooms: " . $row['bedrooms'] . "</p>";
+                                            echo "<p class='bathroomsRow'>Bathrooms: " . $row['bathrooms'] . "</p>";    
+                                        echo "</div>";
+                                        echo "<p class='descriptionField'>" . $row['description'] . "</p>";
+                                    echo "</div>";
+                                echo "</button>";
+                                echo "<div class='bottomField'>";
+                                    echo "<p class='dateUpdated'>Date Updated: " . $row['dateUpdated'] . "</p>";
+                                    echo "<button class='saveButton' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                                echo "</div>";
+                            echo "</div>";
                         echo "</div>";
-                        echo "</button>";
                     }
                     echo "</form>";
                     echo "</div>";
