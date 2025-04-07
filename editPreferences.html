@@ -20,7 +20,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.html">Login</a>
+                <a href="logout.php">Logout</a>
             </nav>
         </div>
         </div>
@@ -30,6 +30,7 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
     <div class="main">
         <h1>Edit Accommodation Preferences</h1>
+        <div id="returnButtonDiv"><a href="consultantHomePage.html">Return to Consultant Menu</a></div>
         <form action="save_preferences.php" method="POST">
             <div class="form-group">
                 <label for="location">Preferred City/Town</label>
@@ -42,31 +43,15 @@
 
             <div class="form-group">
                 <label for="maxPrice">Maximum Price(£)</label>
-                <input type="number" id="maxPrice" name="maxPrice" placeholder="Enter Price">
+                <input type="number" id="maxPrice" name="maxPrice" min="100" max="5000000" step="100" onwheel="disableScroll(event)" placeholder="Enter Price">
             </div>
             <div class="form-group">
                 <label for="bedrooms">Preferred Bedrooms</label>
-                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Bedrooms" min="1">
+                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Bedrooms" min="1" onwheel="disableScroll(event)">
             </div>
-
             <div class="form-group">
-                <label for="minBedrooms">Minimum Bedrooms</label>
-                <input type="number" id="minBedrooms" name="minBedrooms" placeholder="Enter minimum number of bedrooms">
-            </div>
-
-            <div class="form-group">
-                <label for="maxBedrooms">Maximum Bedrooms</label>
-                <input type="number" id="maxBedrooms" name="maxBedrooms" placeholder="Enter maximum number of bedrooms">
-            </div>
-
-            <div class="form-group">
-                <label for="minBathrooms">Minimum Bathrooms</label>
-                <input type="number" id="minBathrooms" name="minBathrooms" placeholder="Enter minimum number of bathrooms">
-            </div>
-
-            <div class="form-group">
-                <label for="maxBathrooms">Maximum Bathrooms</label>
-                <input type="number" id="maxBathrooms" name="maxBathrooms" placeholder="Enter maximum number of bathrooms">
+                <label for="bathrooms">Preferred Bathrooms</label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter Bathrooms" min="1" onwheel="disableScroll(event)">
             </div>
 
             <div class="form-group">
@@ -81,6 +66,8 @@
             <button type="submit">Save Preferences</button>
         </form>
     </div>
+    <div id="emptyFillerDiv"></div>
+    <script src="javascript/inputNumberDisableScroll.js"></script>
 </body>
 
 </html>

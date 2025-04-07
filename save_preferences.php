@@ -5,9 +5,8 @@ session_start();
 include "connection.php";
 
 //checks the user is logged in
-if(!isset($_SESSION['user_id'])){
-    echo "<h2>Login before editing preferences</h2>";
-    echo "<a href='login.html'>Login</a>";
+if(!isset($_SESSION['userId'])){
+    echo "Location: loginConsultant.html";
     exit();
 }
 
@@ -18,33 +17,51 @@ function validate($data){
     return $data;
 }
 
-//checks that the form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $location = validate($_POST['location']);
-    $maxPrice = validate($_POST['maxPrice']);
-    $minBedrooms = validate($_POST['minBedrooms']);
-    $maxBedrooms = validate($_POST['maxBedrooms']);
-    $minBathrooms = validate($_POST['minBathrooms']);
-    $maxBathrooms = validate($_POST['maxBathrooms']);
-    $propertyType = validate($_POST['propertyType']);
+$location = validate($_POST['location']);
+$postcode = validate($_POST['postcode']);
+$maxPrice = validate($_POST['maxPrice']);
+$bedrooms = validate($_POST['bedrooms']);
+$bathrooms = validate($_POST['bathrooms']);
+$propertyType = validate($_POST['propertyType']);
 
-    //checks if any field is left empty
-    if(empty($location) || empty($maxPrice) || empty($minBedrooms) || empty($maxBedrooms) || empty($minBathrooms)|| empty($maxBathrooms) || empty($propertyType)){
-        echo "<h2>Please fill in all the fields</h2>";
-        echo "<a href='editPreferences.html'>Return to Edit Preferences</a>";
-        exit();
-    }
+// Start the SQL base
+$sql = "UPDATE fdm_users SET ";
 
+// Build an array of SET clauses
+$updates = [];
 
-    //data is inserted into the database
-    $sql = "INSERT INTO preferences(location, maxPrice, minBedrooms, maxBedrooms, minBathrooms, maxBathrooms, propertyType) VALUES('$location', '$maxPrice', '$minBedrooms', '$maxBedrooms', '$minBathrooms', '$maxBathrooms', '$propertyType')";
+if(!empty($location)){
+    $updates[] = "pref_location = '".mysqli_real_escape_string($conn, $location)."'";
+}
+if(!empty($postcode)){
+    $updates[] = "pref_postcode = '".mysqli_real_escape_string($conn, $postcode)."'";
+}
+if(!empty($maxPrice)){
+    $updates[] = "pref_maxprice = '".mysqli_real_escape_string($conn, $maxPrice)."'";
+}
+if(!empty($bedrooms)){
+    $updates[] = "pref_bedrooms = '".mysqli_real_escape_string($conn, $bedrooms)."'";
+}
+if(!empty($bathrooms)){
+    $updates[] = "pref_bathrooms = '".mysqli_real_escape_string($conn, $bathrooms)."'";
+}
+if(!empty($propertyType)){
+    $updates[] = "pref_propertytype = '".mysqli_real_escape_string($conn, $propertyType)."'";
+}
+
+// Only proceed if there's at least one field to update
+if (!empty($updates)) {
+    $sql .= implode(", ", $updates);
+    $sql .= " WHERE id = " . intval($_SESSION['userId']) . ";";
+
     if(!mysqli_query($conn, $sql)){
         die("Error: " . mysqli_error($conn));
-    }
-    else{
+    } else {
         header("Location: mainpage.html");
         exit();
     }
+} else {
+    echo "No fields to update.";
 }
 
 ?>
