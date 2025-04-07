@@ -143,3 +143,23 @@ p{
     padding: 10px;
     margin-left: 10px;
 }
+
+
+/*otp button*/
+#otp-button button{
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.otp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    width: 80%;
+}

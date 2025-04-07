@@ -12,7 +12,6 @@ function validate($data) {
 }
 
 if (isset($_POST['register'])) {
-
     // checks if form is submitted and register button is clicked
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
@@ -22,13 +21,32 @@ if (isset($_POST['register'])) {
         $password = validate($_POST['password']);
         $role = validate($_POST['role']);
 
+        //statement to check if the email already exits in the database
+        $registerationCheck = $conn->prepare("SELECT * FROM fdm_users WHERE email = ?");
+        $registerationCheck -> bind_param("s", $email);
+        $registerationCheck -> execute();
+
+        $result = $registerationCheck -> get_result();
+
+        // if email exists, user alerted and redirected to login page
+        if ($result->num_rows > 0) {
+            echo "<script>
+                alert('There is already an account with this email address.');
+                window.location.href = 'loginConsultant.html';
+                </script>";
+                exit();
+        }
+
+        $registerationCheck -> close();
+
+        // password hashed for security
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // inserts data into database
-        $sql = "INSERT INTO fdm_users(username, email, password, role) VALUES ('$username', '$email', '$hashedPassword', '$role')";
-        $query = mysqli_query($conn, $sql);
+        // insert data into the database
+        $registrationCheck = $conn->prepare("INSERT INTO fdm_users (username, email, password, role) VALUES (?,?,?,?)");
+        $registrationCheck->bind_param("ssss", $username, $email, $hashedPassword, $role);
 
-        if ($query) {
+        if ($registrationCheck->execute()) {
             echo "<script>
                 alert('Registration successful');
                 window.location.href = 'loginConsultant.html';
