@@ -2,7 +2,7 @@
 session_start();
 
 //database connection
-include "connection_preferences.php";
+include "connection.php";
 
 //checks the user is logged in
 if(!isset($_SESSION['user_id'])){

@@ -9,16 +9,43 @@
 </head>
 
 <body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="mainpage.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="loginConsultant.html">Login</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
     <div class="main">
         <h1>Edit Accommodation Preferences</h1>
         <form action="save_preferences.php" method="POST">
             <div class="form-group">
-                <label for="location">Preferred Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter Location">
+                <label for="location">Preferred City/Town</label>
+                <input type="text" id="location" name="location" placeholder="Enter City/Town">
+            </div>
+            <div class="form-group">
+                <label for="postcode">Preferred Postcode</label>
+                <input type="text" id="postcode" name="postcode" placeholder="Enter Postcode">
             </div>
             <div class="form-group">
                 <label for="maxPrice">Maximum Price(£)</label>
-                <input type="number" id="maxPrice" name="maxPrice" placeholder="Enter price">
+                <input type="number" id="maxPrice" name="maxPrice" placeholder="Enter Price">
+            </div>
+            <div class="form-group">
+                <label for="bedrooms">Preferred Bedrooms</label>
+                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Bedrooms" min="1">
             </div>
             <div class="form-group">
                 <label for="propertyType">Property Type</label>

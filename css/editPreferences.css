@@ -1,14 +1,97 @@
+:root {
+    --dark-color: #303030;
+    --light-color: #a8a8a8;
+    --primary-color: #98cde5;
+    --accent-color: rgb(184, 117, 36);
+    --dark-accent-color: #2e3d72;
+}
+
 body{
     background-color: #f0f8ff;
     font-family: Arial, Helvetica, sans-serif;
-
 }
+ 
+#background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    --mask: linear-gradient(to bottom, 
+      rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 15%, 
+      rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0%)
+      100% 50% / 100% 100% repeat-x;
+    mask: var(--mask)
+}
+
+header{
+    background-color: var(--primary-color);
+    display: inline-block;
+    width: 100%;
+    border-bottom: var(--accent-color) 4px solid;
+    position: fixed;
+    top: 0;
+}
+
+#logo {
+    background-color: var(--accent-color);
+    float: left;
+    padding: 20px;
+    font-weight: bold;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#logo a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+#nav{
+    float: right;
+    padding: 25px;
+    background-color: var(--primary-color);
+}
+
+#nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--dark-color);
+    border: var(--primary-color) 3px solid;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+#nav a:hover {
+    color: black;
+    border-color: var(--dark-accent-color);
+}
+
+#nav a:active {
+    color: var(--light-color);
+    border-style: outset;
+}
+
+.main{
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+
 h1{
     color: black;
     text-align: center;
     margin-bottom: 15px;
     margin: 0%;
-    font-size: large;
+    font-size: 25px;
 }
 .form-group{
     margin-bottom: 15px;
