@@ -57,11 +57,12 @@ if (!empty($updates)) {
     if(!mysqli_query($conn, $sql)){
         die("Error: " . mysqli_error($conn));
     } else {
-        header("Location: mainpage.html");
+        header("Location: consultantHomePage.html");
         exit();
     }
 } else {
-    echo "No fields to update.";
+    header("Location: consultantHomePage.html");
+    exit();
 }
 
 ?>
