@@ -72,7 +72,7 @@
 
             <button type="submit" id="searchButton">Search</button>
         </form>
-        <div id="searchPropertyContainer">
+        <div id="searchPropertyContainer ">
             <h1>
                 Search for Property
             </h1>
@@ -130,6 +130,16 @@
                     exit;
                 }
 
+                $sql = "SELECT property_id FROM saved_properties WHERE user_id = " . $_SESSION['userId'];
+                $savedProperties = mysqli_query($conn, $sql);
+                if (!$savedProperties) {
+                    die("Query failed: " . mysqli_error($conn));
+                }
+                $savedPropertyIds = array();
+                while ($row = mysqli_fetch_assoc($savedProperties)) {
+                    $savedPropertyIds[] = $row['property_id'];
+                }
+
                 if ($query -> num_rows > 0) {
                     echo "<div id='tableContainer'>";
                     echo "<form>";
@@ -149,9 +159,14 @@
                                         echo "<p class='descriptionField'>" . $row['description'] . "</p>";
                                     echo "</div>";
                                 echo "</button>";
-                                echo "<div class='bottomField'>";
+                                echo "<div class='bottomField' data-id='" . $row['propertyId'] . "'>";
                                     echo "<p class='dateUpdated'>Date Updated: " . $row['dateUpdated'] . "</p>";
-                                    echo "<button class='saveButton' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                                    if (in_array($row['propertyId'], $savedPropertyIds)){
+                                        echo "<button id='saveButton' class='saveButton saved' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                                    }
+                                    else {
+                                        echo "<button id='saveButton' class='saveButton' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                                    }
                                 echo "</div>";
                             echo "</div>";
                         echo "</div>";
@@ -165,4 +180,5 @@
         </div>
     </div>
     <script src="javascript/inputNumberDisableScroll.js"></script>
+    <script src="javascript/saveProperty.js"></script>
 </body>

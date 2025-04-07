@@ -72,7 +72,7 @@ input[type="number"] {
     padding: 10px 20px;
     border-radius: 10px;
     background-color:  rgba(210, 210, 210, 0.4);
-    margin: 20px auto;
+    margin: 200px auto 50px;
     display: block;
     width: 50%;
     text-align: center;
@@ -92,7 +92,7 @@ input[type="number"] {
 /*main table to store currently displayed properties*/
 #tableContainer{
     display: block;
-    width: 100%;
+    width: 95%;
     margin: auto;
     border-collapse: collapse;
     margin-bottom: 2%;
@@ -144,7 +144,6 @@ input[type="number"] {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
 }
 
 .propertyDetailsButton *{
@@ -217,6 +216,22 @@ input[type="number"] {
 }
 
 .saveButton:active{
+    background-color: #1e1e1e;
+    color: #c6ff00;
+    border-color: transparent;
+}
+
+.saved{
+    background-color: rgb(111, 0, 0);
+    color: rgb(153, 153, 153);
+    border-color: transparent;
+}
+
+.saved:hover{
+    border-color: black;
+}
+
+.saved:active{
     background-color: #1e1e1e;
     color: #c6ff00;
     border-color: transparent;
