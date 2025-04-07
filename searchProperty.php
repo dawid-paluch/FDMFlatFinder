@@ -142,12 +142,12 @@
 
                 if ($query -> num_rows > 0) {
                     echo "<div id='tableContainer'>";
-                    echo "<form>";
+                    echo "<form id='propertyListForm' method='post' action='consultantPropertySpecific.php'>";
                     while ($row = mysqli_fetch_assoc($query)) {
                         echo "<div class='tableRow'>";
                             echo "<div class='imageField'><img src='uploads/".$row['image_name']."' alt='Property Image'></div>";
                             echo "<div class='propertyInfo'>";
-                                echo "<button class='propertyDetailsButton' type='button' name='propertyDetailsButton' value='" . $row['propertyId'] . "'>";
+                                echo "<button class='propertyDetailsButton' name='propertyId' type='submit' name='propertyDetailsButton' value='" . $row['propertyId'] . "'>";
                                     echo "<div class='propertyDetailsButtonDiv'>";
                                         echo "<p class='addressField'>" . strtoupper($row['addressLine1']) . ", " . strtoupper($row['addressCityTown']) . ", " . strtoupper($row['addressPostcode']) . "</p>";
                                         echo "<div class='detailsField'>";
