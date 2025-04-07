@@ -39,6 +39,7 @@
                 <label for="postcode">Preferred Postcode</label>
                 <input type="text" id="postcode" name="postcode" placeholder="Enter Postcode">
             </div>
+
             <div class="form-group">
                 <label for="maxPrice">Maximum Price(£)</label>
                 <input type="number" id="maxPrice" name="maxPrice" placeholder="Enter Price">
@@ -47,13 +48,36 @@
                 <label for="bedrooms">Preferred Bedrooms</label>
                 <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Bedrooms" min="1">
             </div>
+
+            <div class="form-group">
+                <label for="minBedrooms">Minimum Bedrooms</label>
+                <input type="number" id="minBedrooms" name="minBedrooms" placeholder="Enter minimum number of bedrooms">
+            </div>
+
+            <div class="form-group">
+                <label for="maxBedrooms">Maximum Bedrooms</label>
+                <input type="number" id="maxBedrooms" name="maxBedrooms" placeholder="Enter maximum number of bedrooms">
+            </div>
+
+            <div class="form-group">
+                <label for="minBathrooms">Minimum Bathrooms</label>
+                <input type="number" id="minBathrooms" name="minBathrooms" placeholder="Enter minimum number of bathrooms">
+            </div>
+
+            <div class="form-group">
+                <label for="maxBathrooms">Maximum Bathrooms</label>
+                <input type="number" id="maxBathrooms" name="maxBathrooms" placeholder="Enter maximum number of bathrooms">
+            </div>
+
             <div class="form-group">
                 <label for="propertyType">Property Type</label>
                 <select name="propertyType" id="propertyType">
                     <option value="Flat">Flat</option>
                     <option value="House">House</option>
+                    <option value="Studio">Studio</option>
                 </select>
             </div>
+
             <button type="submit">Save Preferences</button>
         </form>
     </div>
