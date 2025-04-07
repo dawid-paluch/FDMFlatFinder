@@ -6,8 +6,8 @@
 
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/homepage.css" />
-  <title>Web Dev Coursework</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <title>FDM Flat Finder</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="checkLogin.php">Login</a>
+                <a href="loginConsultant.html">Login</a>
             </nav>
         </div>
         </div>
@@ -31,16 +31,21 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <section>
-            <h1>Welcome to FlatFinderFDM</h1>
-            <p>
-                FlatFinderFDM, is best place to relocate. Wide range of properties available to rent at any location.
-                Great networking service to find others and our website is easy to use.
-                Our team of experts also help where possible keeping you and others safe.
-            </p>
-        </section>
-        <figure>
-            <img id="logo-image" src="images/FDM_placeholder.png" alt="FlatFinderFDM logo">
-        </figure>
+        <form method="POST" action="otp.php">
+            <div id="formContainer">
+                <h1>
+                    Enter OTP
+                </h1>
+                <div id="userType-buttons">
+                    <p id="consultant-button">OTP</p>
+                </div>
+                <label for="otp">OTP:</label>
+                <input type = "text" name = "otp"  placeholder = "Enter OTP" autofocus required>
+        
+                <div id="submit-buttons">
+                    <button type = "submit">Verify OTP</button>
+                </div>
+            </div>
+        </form> 
     </div>
 </body>
