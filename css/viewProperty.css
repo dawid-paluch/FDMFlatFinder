@@ -53,6 +53,7 @@
     font-weight: bold;
     font-size: 25px;
     background-color: transparent;
+    border: 0;
 }
 
 #tableHead{
@@ -73,6 +74,11 @@
     background-color: inherit;
     color: inherit;
     overflow: hidden;
+}
+
+#tableContainer button{
+    width: 100%;
+    background-color: transparent;
 }
 
 .tableRow:hover{

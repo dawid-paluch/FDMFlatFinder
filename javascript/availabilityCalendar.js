@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'July', 'August', 'September', 'October', 'November', 'December'];
 
     let currentDate = new Date();
-    console.log(currentDate);
     let today = new Date();
 
     // Function to render the calendar
