@@ -69,8 +69,9 @@
             echo "<div class='form-group'>";
                 echo "<label for='propertyType'>Property Type</label>";
                 echo "<select name='propertyType' id='propertyType'>";
-                    echo "<option value='Flat'>Flat</option>";
                     echo "<option value='House'>House</option>";
+                    echo "<option value='Apartment'>Apartment</option>";
+                    echo "<option value='Flat'>Flat</option>";
                     echo "<option value='Studio'>Studio</option>";
                 echo "</select>";
                 echo "<script>";
