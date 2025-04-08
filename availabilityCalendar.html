@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/availabilityCalendar.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <title>Web Dev Coursework</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="mainpage.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="loginConsultant.html">Login</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+
+    <div id="main">
+        <!--To prevent issues with loading the calendar, the calendar will likely have to be outside of the form.
+        To allow the calendar an extra hidden input will be added to the form and js will be used to add the selected dates information.-->
+        <div id="calendarContainer">
+            <div id="calendarHead">
+                <button id="prev" class="btn disabled"><span class="material-symbols-outlined">arrow_back</span></button>
+                <div id="month-year"></div>
+                <button id="next" class="btn"><span class="material-symbols-outlined">arrow_forward</span></button>
+            </div>
+            <div id="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div id="days"></div>
+        </div>
+    </div>
+    <script src="javascript/availabilityCalendar.js"></script>
+</body>

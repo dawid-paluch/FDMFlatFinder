@@ -1,0 +1,92 @@
+#calendarContainer{
+    background-color: rgba(180,180,180,0.8);
+    border-radius: 15px;
+    height: 500px;
+    padding: 10px;
+}
+
+#calendarHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#calendarContainer button {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#weekdays, #days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#days {
+    height: 210px;
+}
+
+#weekdays div, #days div {
+    width: 13.49%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: solid 3px transparent;
+}
+
+#days div {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#days .active:hover {
+    border-color: #1e1e1e;
+    color: #c6ff00;
+}
+
+#days .selected {
+    color: #1e1e1e;
+    background-color: #c6ff00;
+}
+
+#days .selected:hover {
+    border-color: black;
+    color: gray;
+}
+
+#days .fade, .disabled {
+    color: #888;
+    cursor: not-allowed;
+}
+
+.checkbox{
+    display: none;
+}
+
+#submit{
+    bottom: 0;
+}
+
+#buttonContainer button{
+    border-radius: 15px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    border: solid 3px transparent;
+    text-decoration: none;
+    color: black;
+}
+
+#buttonContainer button:hover{
+    border-color: #1e1e1e;
+
+}
+
+#buttonContainer button:active{
+    background-color: #c6ff00;
+    border-color: transparent;
+}
