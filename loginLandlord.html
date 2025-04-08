@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/login.css" />
-  <title>Web Dev Coursework</title>
+
+  <title>FDM FlatFinder</title>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.html">Login</a>
+                <a href="checkLogin.php">Login</a>
             </nav>
         </div>
         </div>
@@ -41,15 +42,18 @@
                     <p id="landlord-button">Landlord</p>
                 </div>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter Email" required>
-    
+                <input type="email" id="email" name="email" placeholder="Enter Email" autofocus required>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <input type="hidden" name="role" value="landlord">
     
                 <div id="submit-buttons">
                     <button type="reset" id="clear-button">Clear Form</button>
-                    <button type="submit" id="submit-button">Send</button>
+                    <button type="submit" id="submit-button">Login</button>
                 </div>
+                <div id="alternativeAccess">
+                    <p><a href = "registerLandlord.html">Register as a Landlord</a></p>
+               </div>
             </div>
         </form> 
     </div>
