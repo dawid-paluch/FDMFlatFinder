@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"]) {
     $new_password= $_POST['password'];
     $user_id = $_SESSION['id'];
 
+    $new_password = password_hash($new_password, PASSWORD_DEFAULT);
+
     $sql = "UPDATE fdm_users SET password = '$new_password' WHERE id = $user_id";
     $result = mysqli_query($conn, $sql);
 
