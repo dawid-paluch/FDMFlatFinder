@@ -27,8 +27,8 @@ session_start();
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="logout.php">Logout</a>
                 <a href="account.php">My Account</a>
+                <a href="logout.php">Logout</a>
             </nav>
         </div>
         </div>
@@ -38,11 +38,13 @@ session_start();
 
     <div id="main">
         <?php if (isset($_SESSION['userId'])): ?>
-                <div id="formContainer">
+                <div id="accountDetailsContainer">
                     <h1>
                         Your Personal Details
                     </h1>
                     <div id="detailtype-buttons">
+                        <a id="returnButton" href="javascript:history.back()">Return to Menu</a>
+
                         <a id="email-button" href="changeEmail.html">Change Email</a>
 
                         <a id="password-button" href="changePassword.html">Change Password</a>
@@ -54,7 +56,7 @@ session_start();
                         <a id="age-button" href="changeAge.html">Change Age</a>
                 </div>
         <?php else: ?>
-            <div id="formContainer">
+            <div id="accountDetailsContainer">
                     <h1>
                         You must be logged in to access your account details
                     </h1>
