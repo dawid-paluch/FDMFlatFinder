@@ -70,7 +70,7 @@
     text-align: center;
     border-right: dashed 2px #4f4f4f;
     padding: 1%;
-    width: 16%;
+    width: 14%;
     background-color: inherit;
     color: inherit;
     overflow: hidden;
@@ -92,9 +92,17 @@
 }
 
 .line1Field{
-    width: 40%;
+    width: 30%;
 }
 
 .priceRow,  #tableHead .priceRow{
     border-right: transparent;
+}
+
+.booked{
+    color:red;
+}
+
+.unbooked{
+    color:green;
 }

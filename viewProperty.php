@@ -44,7 +44,7 @@
 
             $userId = $_SESSION['userId'];
 
-            $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, price, availability FROM propertyList WHERE userId = '$userId'";
+            $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, price, availability, bookID FROM propertyList WHERE userId = '$userId'";
             
             $query = mysqli_query($conn, $sql);
             if (!$query) {
@@ -57,7 +57,7 @@
 
             if ($query -> num_rows > 0) {
                 echo "<div id='tableContainer'>";
-                echo "<div id='tableHead'><p class='tableField line1Field'>Address</p><p class='tableField cityTownField'>City/Town</p><p class='tableField postcodeField'>Postcode</p><p class='tableField priceRow'>Price (£)</p></div>";
+                echo "<div id='tableHead'><p class='tableField line1Field'>Address</p><p class='tableField cityTownField'>City/Town</p><p class='tableField postcodeField'>Postcode</p><p class='tableField bookedField'>Booked</p><p class='tableField priceRow'>Price (£)</p></div>";
                 while ($row = mysqli_fetch_assoc($query)) {
                     echo "<form action='landlordPropertySpecific.php' method='post'>";
                     echo "<button class='tableButton' type='submit' name='propertyId' value='" . $row['propertyId'] . "'>";
@@ -65,6 +65,11 @@
                     echo "<p class='tableField line1Field'>" . $row['addressLine1'] . "</p>";
                     echo "<p class='tableField cityTownField'>" . $row['addressCityTown'] . "</p>";
                     echo "<p class='tableField postcodeField'>" . $row['addressPostcode'] . "</p>";
+                    if ($row['bookID'] == NULL) {
+                        echo "<p class='tableField bookedField unbooked'>Available</p>";
+                    } else {
+                        echo "<p class='tableField bookedField booked'>Booked</p>";
+                    }
                     echo "<p class='tableField priceRow'>£" . number_format($row['price']) . "</p>";
                     echo "</div>";
                     echo "</button>";

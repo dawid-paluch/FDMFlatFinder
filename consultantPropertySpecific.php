@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/landlordPropertySpecific.css" />
+  <link rel="stylesheet" href="css/consultantPropertySpecific.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <title>Web Dev Coursework</title>
 </head>
@@ -80,10 +80,24 @@
                     echo "</div>";
                     echo "<div id='days'></div>";
                 echo "</div>";
+                echo "<div class='bookingButtons' data-id='".$propertyId."'>";
+                $sql = "SELECT bookID FROM propertylist WHERE propertyId = '$propertyId'";
+                $query = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($query);
+                $bookID = $row['bookID'];
+
+                if ($bookID == $_SESSION['userId']) {
+                    echo "<button class='bookButton booked'>Book Now</button>";
+                }
+                else {
+                    echo "<button class='bookButton'>Book Now</button>";
+                }
+                echo "</div>";
             echo "</div>";
             ?>
         </div>
     </div>
     <div id="emptyFillerDiv"></div>
     <script src="javascript/availabilityCalendarViewing.js"></script>
+    <script src="javascript/sendBookRequest.js"></script>
 </body>
