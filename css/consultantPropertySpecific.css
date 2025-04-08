@@ -1,0 +1,230 @@
+#propertyDetailsContainer{
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    z-index: 10;
+    background-color: rgba(180,180,180,0.8);
+    border-radius: 15px;
+    width: 80%;
+    padding-right: 10px;
+    transform: translateX(-50%);
+    height: 135%;
+}
+
+#propertyDetailsContainer h1{
+    text-align: center;
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+#returnButtonDiv > a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    text-align: center;
+    border: solid 3px transparent;
+}
+
+#returnButtonDiv > a:hover{
+    border-color: black;
+}
+
+#returnButtonDiv > a:active{
+    background-color: #c6ff00;
+    color: black;
+    border-color: transparent;
+}
+
+.propertyDetailsDiv{
+    position: relative;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    height: 340px;
+}
+
+.imageField{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    border: transparent;
+    border-radius: 15px;
+    width: 25%;
+    height: 340px;
+}
+
+.imageField img{
+    width: 340px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.propertyInfo{
+    position: absolute;
+    top: 0;
+    left: 30%;
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+}
+
+.propertyDetailsButton{
+    position: relative;
+    border-radius: 15px;
+    height: 88%;
+    width: 100%;
+}
+
+.propertyDetailsButtonDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.addressField{
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: solid underline;
+    padding: 10px;
+    width: 95%;
+    border-bottom: solid 3px rgb(227, 227, 227);
+}
+
+.detailsField p{
+    display: inline;
+    margin: 0 5px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.descriptionField{
+    padding: 10px;
+    font-size: 19px;
+    overflow-y: auto;
+}
+
+/*CSS for availability calender of the property details of a specific property*/
+.availabilityCalendarContainer{
+    position: absolute;
+    top: 108%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    border-radius: 15px;
+}
+
+h2{
+    text-align: center;
+    font-size: 25px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border-bottom: solid 3px rgb(227, 227, 227);
+}
+
+#calendarContainer{
+    border-radius: 15px;
+    height: 500px;
+    padding: 10px;
+    width: 60%;
+}
+
+#calendarHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#calendarHead .btn {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#weekdays, #days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#days {
+    height: 210px;
+}
+
+#weekdays div, #days div {
+    width: 13.49%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: solid 3px transparent;
+}
+
+#days div {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#days .selected {
+    color: #1e1e1e;
+    background-color: #c6ff00;
+}
+
+#days .fade, .disabled {
+    color: #888;
+    cursor: not-allowed;
+}
+
+.bookingButtons{
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 235%;
+}
+
+.bookButton{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    margin: 20px 40%;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    border: solid 3px transparent;
+}
+.bookButton:hover{
+    border-color: black;
+}
+.bookButton:active{
+    background-color: #c6ff00;
+    color: black;
+    border-color: transparent;
+}
+
+.booked{
+    background-color: #ff0000;
+    color: white;
+    cursor: not-allowed;
+}
+
+
+#emptyFillerDiv{
+    position: absolute;
+    display: block;
+    height: 155%;
+    width: 100%;
+}

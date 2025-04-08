@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-echo session_save_path();
 
 include "connection.php";
 
@@ -32,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"]) {
 
     // checks if user exists and password is correct
     if ($row && password_verify($password, $row['password'])) {
-        $_SESSION['id'] = $row['id'];
         // otp expiry datetime created - 5minutes
         $otp_expiry = date('Y-m-d H:i:s', strtotime('+5 minutes'));
 
@@ -78,4 +76,3 @@ if ($_SERVER["REQUEST_METHOD"]) {
         exit();
     }
 }
-

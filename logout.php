@@ -7,4 +7,4 @@ session_destroy();
 
 // redirect to login page
 header("Location: loginConsultant.html");
-
+?>

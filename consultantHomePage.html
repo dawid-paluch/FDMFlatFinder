@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/consultantHomepage.css" />
   <title>FDM Flat Finder</title>
 </head>
 
@@ -27,7 +27,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.html">Login</a>
+                <a href="logout.php">Logout</a>
                 <a href="account.php">My Account</a>
             </nav>
         </div>
@@ -37,12 +37,13 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="register.php">
-            <div id="formContainer">
-                <h1>
-                    Consultant Page
-                </h1>
-            </div>
-        </form> 
+        <div id="consultantHomepageContainer">
+            <h1>
+                Consultant Page
+            </h1>
+            <a href="searchProperty.php">Search for Property</a>
+            <a href="viewSavedProperties.php">View Saved Properties</a>
+            <a href="editPreferences.php">Edit Propery Preferences</a>
+        </div>
     </div>
 </body>

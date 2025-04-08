@@ -3,7 +3,7 @@ section{
     background-color: rgba(180,180,180,0.8);
     border-radius: 15px;
     position: absolute;
-    top: 150px;
+    top: 300px;
     left: 500px;
     padding: 25px 40px;
     line-height: 1.4;
@@ -22,9 +22,9 @@ section h1{
 
 #logo-image{
     position: absolute;
-    top:320px;
-    left: 180px;
+    top:440px;
+    left: 120px;
     width: 350px;
-    border-radius: 200px;
-    border: solid rgb(184, 117, 36) 8px;
+    border-radius: 100px;
+    border: solid #c6ff00 8px;
 }

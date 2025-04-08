@@ -24,6 +24,7 @@
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="loginConsultant.html">Login</a>
+                <a href="checkLogin.php">Login</a>
                 <a href="account.php">My Account</a>
             </nav>
         </div>
@@ -43,7 +44,7 @@
                     <p id="landlord-button">Landlord</p>
                 </div>
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                <input type="text" id="username" name="username" placeholder="Enter Username" autofocus required>
                 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter Email" required>
@@ -62,7 +63,9 @@
                 <div id="submit-buttons">
                     <button type="reset" id="clear-button">Clear Form</button>
                     <button type="submit" name="register" id="submit-button">Register</button>
-                    <p>Already have an account?</p><a href = "loginLandlord.html">Login as Landlord</a>
+                </div>
+                <div id="alternativeAccess">
+                    <p>Already have an account?<a href = "loginLandlord.html">Login as Landlord</a></p>
                </div>
             </div>
         </form> 

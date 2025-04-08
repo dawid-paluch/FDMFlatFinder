@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/listProperty.css">
+  <link rel="stylesheet" href="css/availabilityCalendar.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <title>Web Dev Coursework</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="mainpage.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="logout.php">Logout</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+
+    <div id="main">
+        <div id="listPropertyContainer">
+            <h1>List Property</h1>
+            <div id="returnButtonDiv"><a href="landlordHomePage.html">Return to Landlord Menu</a></div>
+            <form action="listProperty.php" method="post" enctype="multipart/form-data" id="listPropertyForm">
+                <label for="addressLine1">Address Line 1:<div class="requiredAsterisk">*</div></label>
+                <input type="text" id="addressLine1" name="addressLine1" placeholder="Enter Address Line 1" autofocus required>
+
+                <label for="addressLine2">Address Line 2:</label>
+                <input type="text" id="addressLine2" name="addressLine2" placeholder="Enter Address Line 2">
+                
+                <label for="addressCityTown">City/Town:<div class="requiredAsterisk">*</div></label>
+                <input type="text" id="addressCityTown" name="addressCityTown" placeholder="Enter City/Town" required>
+                
+                <label for="addressPostcode">Postcode:<div class="requiredAsterisk">*</div></label>
+                <input type="text" id="addressPostcode" name="addressPostcode" placeholder="Enter Postcode" required>
+
+                <label for="description">Description:<div class="requiredAsterisk">*</div></label>
+                <textarea id="description" name="description" placeholder="Enter Property Description" rows="4" required></textarea>
+
+                <label for="price">Price (£):<div class="requiredAsterisk">*</div></label>
+                <input type="number" id="price" name="price" placeholder="Enter Price" min="100" max="5000000" step="0.01" onwheel="disableScroll(event)" required>
+
+                <label for="bedrooms">Bedrooms:<div class="requiredAsterisk">*</div></label>
+                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter Number of Bedrooms" min="1" onwheel="disableScroll(event)" required>
+
+                <label for="bathrooms">Bathrooms:<div class="requiredAsterisk">*</div></label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter Number of Bathrooms" min="1" onwheel="disableScroll(event)" required>
+
+                <label for="type">Type:<div class="requiredAsterisk">*</div></label>
+                <select id="type" name="type" required>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="flat">Flat</option>
+                    <option value="studio">Studio</option>
+                </select>
+
+                <!--error checking must be added to the various inputs to ensure that they make sense given their context-->
+
+                <label for="image">Image:<div class="requiredAsterisk">*</div></label>
+                <input type="file" id="image" name="image" accept="image/*" required />
+                
+                <input type="hidden" id="availability" name="availability"required **form="listPropertyForm"**/>
+
+                <label for="availability" id="availabilityLabel">Availability Calendar:</label>
+
+                <div id="calendarContainer">
+                    <div id="calendarHead">
+                        <button id="prev" onClick="return false;" class="btn disabled"><span class="material-symbols-outlined">arrow_back</span></button>
+                        <div id="month-year"></div>
+                        <button id="next" onClick="return false;" class="btn"><span class="material-symbols-outlined">arrow_forward</span></button>
+                    </div>
+                    <div id="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div id="days"></div>
+                </div>
+
+                <div id="buttonContainer">
+                    <button type="reset" id="clearButton">Clear Form</button>
+                    <button type="submit" name="listProperty" id="submitButton">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="javascript/availabilityCalendar.js"></script>
+    <script src="javascript/inputNumberDisableScroll.js"></script>
+</body>

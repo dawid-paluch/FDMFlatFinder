@@ -8,6 +8,7 @@
     width: 40%;
     height: 40%;
     margin: 300px auto;
+    padding-right: 10px;
 }
 
 #formContainer h1{
@@ -26,21 +27,21 @@ button, #formContainer a{
 }
 
 button:hover , #formContainer a:hover{
-    border-color: rgb(184, 117, 36);
+    border-color: #1e1e1e;
 
 }
 
 button:active, #formContainer a:active{
-    background-color:#98cde5;
+    background-color:#c6ff00;
     border-color: transparent;
 }
 
 #formContainer p{
     background-color: rgba(210, 210, 210, 0.2);
-    border: solid 3px rgb(184, 117, 36);
+    border: solid 3px #1e1e1e;
     color: grey;
     border-radius: 15px;
-}
+} 
 
 #userType-buttons{
     grid-column: 1/ span 2;
@@ -74,6 +75,16 @@ label{
     font-size: 17px;
 }
 
+#submit-buttons p{
+    color: black;
+    border: solid 3px transparent;
+    background-color: rgba(210, 210, 210, 0.4);
+}
+
+#submit-buttons a{
+    align-self: center;
+}
+
 input{
     margin: 10px;
     padding:10px 5px;
@@ -103,4 +114,52 @@ input{
 
 #submit-button{
     margin-left: 10%;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#alternativeAccess{
+    grid-column: 1/ span 2;
+    width: 100%;
+    margin: 10px;
+}
+
+#alternativeAccess p{
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px 0;
+    display: block;
+    color: black;
+    border: 0;
+    background-color: transparent;
+}
+
+#alternativeAccess a{
+    padding: 10px;
+    margin-left: 10px;
+}
+
+
+/*otp button*/
+#otp-button button{
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.otp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    width: 80%;
 }

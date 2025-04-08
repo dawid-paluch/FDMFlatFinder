@@ -1,0 +1,194 @@
+/*setting background styles*/
+body{
+    background-color: rgb(166, 166, 166);
+}
+
+/*setting style for main search property container*/
+#savedPropertiesContainer{
+    position: absolute;
+    left: 50%;
+    top: 14%;
+    z-index: 10;
+    border-radius: 15px;
+    width: 96%;
+    padding-right: 10px;
+    transform: translateX(-50%);
+}
+
+#savedPropertiesContainer h1{
+    text-align: center;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+#returnButtonDiv > a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color:  rgba(210, 210, 210, 0.4);
+    margin: 10px auto 50px;
+    display: block;
+    width: 50%;
+    text-align: center;
+    border: solid 3px transparent;
+}
+
+#returnButtonDiv > a:hover{
+    border-color: black;
+}
+
+#returnButtonDiv > a:active{
+    background-color: #c6ff00;
+    color: black;
+    border-color: transparent;
+}
+
+/*main table to store currently displayed properties*/
+#tableContainer{
+    display: block;
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
+    margin-bottom: 2%;
+}
+
+.tableRow{
+    position: relative;
+    background-color: #b5b5b5;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    height: 340px;
+}
+
+.imageField{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    border: transparent;
+    border-radius: 15px;
+    width: 25%;
+    height: 340px;
+}
+
+.imageField img{
+    width: 340px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.propertyInfo{
+    position: absolute;
+    top: 0;
+    left: 26%;
+    display: inline-block;
+    width: 74%;
+    height: 100%;
+}
+
+.propertyDetailsButton{
+    position: relative;
+    background-color: #b5b5b5;
+    border-radius: 15px;
+    height: 88%;
+    width: 100%;
+}
+
+.propertyDetailsButtonDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.propertyDetailsButton *{
+    text-align: left;
+}
+
+.propertyDetailsButton:hover{
+    background-color: #676767;
+    color: rgb(181, 181, 181);
+}
+
+.propertyDetailsButton:active{
+    background-color: #c6ff00;
+    color: black;
+}
+
+.addressField{
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: solid underline;
+    padding: 10px;
+    width: 95%;
+    border-bottom: solid 3px rgb(227, 227, 227);
+}
+
+.detailsField p{
+    display: inline;
+    margin: 0 5px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.descriptionField{
+    padding: 10px;
+    font-size: 19px;
+    overflow-y: auto;
+}
+
+.bottomField{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    background-color: #999999;
+    border-radius: 15px;
+}
+
+.bottomField p{
+    position: absolute;
+    top: 20%;
+    left: 20px;
+}
+
+.saveButton{
+    position: absolute;
+    height: 100%;
+    right: 10px;
+    background-color: #c6ff00;
+    color: #1e1e1e;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border: solid 3px transparent;
+}
+
+.saveButton:hover{
+    border-color: black;
+}
+
+.saveButton:active{
+    background-color: #1e1e1e;
+    color: #c6ff00;
+    border-color: transparent;
+}
+
+.saved{
+    background-color: rgb(111, 0, 0);
+    color: rgb(153, 153, 153);
+    border-color: transparent;
+}
+
+.saved:hover{
+    border-color: black;
+}
+
+.saved:active{
+    background-color: #1e1e1e;
+    color: #c6ff00;
+    border-color: transparent;
+}
