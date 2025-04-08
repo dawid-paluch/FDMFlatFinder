@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>FDM Flat Finder</title>
+</head>
+
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="mainpage.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="loginConsultant.html">Login</a>
+                <a href="account.php">My Account</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+
+
+    <div id="main">
+        <form method="POST" action="changeUsername.php">
+            <div id="formContainer">
+                <h1>
+                    Change your Username
+                </h1> 
+                
+                <label for="username">New Username</label>
+                <input type="username" id="username" name="username" placeholder="Enter New Username" required>
+    
+                <div id="submit-buttons">
+                    <button type="reset" id="clear-button">Clear Form</button>
+                    <button type="submit" name="Confirm Change" id="submit-button">Submit</button>
+                    <a href = "account.php">Go Back</a>
+               </div>
+            </div>
+        </form> 
+    </div>
+</body>

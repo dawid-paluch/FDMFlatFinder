@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"]) {
 
     if ($result) {
         $_SESSION['email'] = $new_email;
-        echo "<script>alert('Your email has now been updated.'); window.location.href = 'account.html';</script>";
+        echo "<script>alert('Your email has now been updated.'); window.location.href = 'account.php';</script>";
     } else {
         echo "<script>alert('There was an error updating the email, please try again.');</script>";
     }
