@@ -27,7 +27,7 @@ session_start();
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="loginConsultant.html">Login</a>
+                <a href="logout.php">Logout</a>
                 <a href="account.php">My Account</a>
             </nav>
         </div>
@@ -37,7 +37,7 @@ session_start();
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <?php if (isset($_SESSION['id'])): ?>
+        <?php if (isset($_SESSION['userId'])): ?>
                 <div id="formContainer">
                     <h1>
                         Your Personal Details

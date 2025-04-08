@@ -34,18 +34,18 @@ button, #formContainer a{
 }
 
 button:hover , #formContainer a:hover{
-    border-color: rgb(184, 117, 36);
+    border-color: #1e1e1e;
 
 }
 
 button:active, #formContainer a:active{
-    background-color:#98cde5;
+    background-color:#c6ff00;
     border-color: transparent;
 }
 
 #formContainer p{
     background-color: rgba(210, 210, 210, 0.2);
-    border: solid 3px rgb(184, 117, 36);
+    border: solid 3px #c6ff00;
     color: grey;
     border-radius: 15px;
 }
