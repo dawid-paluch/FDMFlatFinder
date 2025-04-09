@@ -1,8 +1,10 @@
+#!/usr/bin/python3
 from playwright.sync_api import sync_playwright
 import re
 import csv
 import sys
 import json
+import os
 
 def extract_price_from_html(html):
     match = re.search(r'£\s?\d+(?:,\d{3})?(?:\.\d{2})?\s*(?:pcm|pw)', html, re.IGNORECASE)
@@ -20,9 +22,8 @@ def extract_title_from_html(html):
     match = re.search(r'<h2 class="listing-card__title">(.*?)</h2>', html)
     return match.group(1).strip() if match else "No title"
 
-def scrape_spareroom_rooms(area='kingston_upon_thames', pages=5):
-    from playwright.sync_api import sync_playwright
-    import re
+def scrape_spareroom_rooms(area='London', pages=5):
+
 
     results = []
 
@@ -83,15 +84,59 @@ def export_to_csv(data, filename='spareroom_listings.csv'):
         writer.writerows(data)
     print(f"✅ Data exported to {filename}")
 
-def export_to_json(data, filename='spareroom_listings.json'):
-    with open(filename, 'w', encoding='utf-8') as jsonfile:
+def export_to_json(data, filename='spareroom_listings.json', city=None):
+    # Ensure the spareroom/ folder exists
+    folder_name = 'spareroom'
+    os.makedirs(folder_name, exist_ok=True)
+
+    # Adjust the filename if a city is provided
+    if city:
+        filename = f'spareroom_listings_{city.lower().replace(" ", "_")}.json'
+
+    # Full path to save file inside 'spareroom/' folder
+    json_path = os.path.join("spareroom/", filename)
+
+    # Add city info to each listing
+    if city:
+        for listing in data:
+            listing['SearchCity'] = city.lower()
+
+    with open(json_path, 'w', encoding='utf-8') as jsonfile:
         json.dump(data, jsonfile, ensure_ascii=False, indent=4)
-    print(f"✅ Data exported to {filename}")
 
-
+    print(f"✅ Data exported to {json_path}")
 if __name__ == "__main__":
-    rooms = scrape_spareroom_rooms(area='manchester')
+    cities = [
+    "Birmingham", "Bristol", "Leeds", "London", "Central London", "East London",
+    "North London", "North West London", "South East London", "South West London",
+    "West London", "Manchester", "Bolton", "Oldham", "Stockport", "Warrington",
+    "Wigan", "Bath", "Blackburn", "Blackpool", "Bournemouth", "Bradford", "Brighton",
+    "Bromley", "Cambridge", "Canterbury", "Carlisle", "Chelmsford", "Chester",
+    "Cleveland", "Colchester", "Coventry", "Crewe", "Croydon", "Darlington", "Dartford",
+    "Derby", "Doncaster", "Dorchester", "Dudley", "Durham", "Enfield", "Exeter",
+    "Gloucester", "Guernsey", "Guildford", "Halifax", "Harrogate", "Harrow",
+    "Hemel Hempstead", "Hereford", "Huddersfield", "Hull", "Ilford", "Ipswich",
+    "Isle Of Man", "Kingston Upon Thames", "Lancaster", "Leicester", "Lincoln",
+    "Liverpool", "Luton", "Milton Keynes", "Newcastle Upon Tyne", "Northampton",
+    "Norwich", "Nottingham", "Oxford", "Peterborough", "Plymouth", "Portsmouth",
+    "Preston", "Reading", "Redhill", "Romford", "Salisbury", "Sheffield", "Slough",
+    "Southall", "Southampton", "Southend-On-Sea", "St. Albans", "Stevenage",
+    "Stoke-On-Trent", "Sunderland", "Sutton", "Swindon", "Taunton", "Telford",
+    "Tonbridge", "Torquay", "Truro", "Twickenham", "Wakefield", "Walsall", "Watford",
+    "Wolverhampton", "Worcester", "York", "Belfast", "Edinburgh", "Glasgow",
+    "Aberdeen", "Dumfries", "Dundee", "Falkirk", "Galashiels", "Inverness",
+    "Kilmarnock", "Kirkcaldy", "Motherwell", "Paisley", "Perth", "Cardiff",
+    "Llandudno", "Newport", "Shrewsbury", "Swansea"
+    
+    ]
 
+    for i in cities:
+        print(f"Scraping listings for {i}...")
+        rooms = scrape_spareroom_rooms(area=i, pages=5)
+        export_to_json(rooms, city=i)
+
+
+    # Optional: Print results (you can remove this if not needed)
     for idx, room in enumerate(rooms, 1):
         print(f"{idx}. {room['Title']}")
         print(f"   Location: {room['Location']}")
@@ -99,5 +144,6 @@ if __name__ == "__main__":
         print(f"   Description: {room['Description']}")
         print(f"   Link: {room['Link']}")
         print()
+    
 
 
