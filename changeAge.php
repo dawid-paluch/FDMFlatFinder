@@ -16,8 +16,12 @@ if ($_SERVER["REQUEST_METHOD"]) {
 
     if ($result) {
         $_SESSION['age'] = $new_age;
-        echo "<script>alert('Your age has now been updated.'); window.location.href = 'account.php';</script>";
-    } else {
+        echo "<script>
+            alert('Your age has now been updated.');
+            window.history.go(-2);
+        </script>";
+    }
+     else {
         echo "<script>alert('There was an error updating the age, please try again.');</script>";
     }
 

@@ -15,9 +15,13 @@ if ($_SERVER["REQUEST_METHOD"]) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        $_SESSION['email'] = $new_email;
-        echo "<script>alert('Your email has now been updated.'); window.location.href = 'account.php';</script>";
-    } else {
+        $_SESSION['age'] = $new_age;
+        echo "<script>
+            alert('Your email has now been updated.');
+            window.history.go(-2);
+        </script>";
+    }
+     else {
         echo "<script>alert('There was an error updating the email, please try again.');</script>";
     }
 
