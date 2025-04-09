@@ -42,7 +42,7 @@ include 'connection.php';
       <input type="text" id="addressPostcode" name="addressPostcode">
 
       <label for="minPrice">Min Price (£):</label>
-      <input type="range" value="0" id="minPrice" name="minPrice" min="0" max="5000000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
+      <input type="range" value="0" id="minPrice" name="minPrice" min="0" max="5000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
       <output>£0</output>
 
       <label for="bedrooms">Bedrooms:</label>
@@ -60,8 +60,8 @@ include 'connection.php';
       </select>
 
       <label for="maxPrice">Max Price (£):</label>
-      <input type="range" value="5000000" id="maxPrice" name="maxPrice" min="0" max="5000000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
-      <output>£5,000,000</output>
+      <input type="range" value="5000" id="maxPrice" name="maxPrice" min="0" max="5000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
+      <output>£5,000</output>
 
       <label for="bathrooms">Bathrooms:</label>
       <input type="number" id="bathrooms" name="bathrooms" min="1" onwheel="disableScroll(event)">
@@ -183,7 +183,7 @@ include 'connection.php';
             $jsonData = file_get_contents($jsonFilename);
             $scrapedListings = json_decode($jsonData, true);
             $minPrice = isset($_POST['minPrice']) ? (int)$_POST['minPrice'] : 0;
-            $maxPrice = isset($_POST['maxPrice']) ? (int)$_POST['maxPrice'] : 5000000;
+            $maxPrice = isset($_POST['maxPrice']) ? (int)$_POST['maxPrice'] : 5000;
 
 
             $scrapedListings = array_filter($scrapedListings, function ($listing) use ($minPrice, $maxPrice) {
