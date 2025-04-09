@@ -18,10 +18,18 @@ if (isset($_POST['register'])) {
         // gets data from the form and validate it
         $username = validate($_POST['username']);
         $email = validate($_POST['email']);
-        $password = validate($_POST['password']);
         $role = validate($_POST['role']);
         $age = validate($_POST['age']);
         $location = validate($_POST['location']); 
+
+        $password = validate($_POST['password']);
+
+        // password validation - checks if password is at least 8 characters long and contains at least one letter and one number
+        $pattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/"; 
+        if (!preg_match($pattern, $password)) {
+            echo "<script>alert('Password must be at least 8 characters long and include at least one letter and one number.');</script>";
+            exit();
+        }
 
         //statement to check if the email already exits in the database
         $registerationCheck = $conn->prepare("SELECT * FROM fdm_users WHERE email = ?");

@@ -2,6 +2,8 @@
 
 session_start();
 
+date_default_timezone_set('Europe/London'); 
+
 include "connection.php";
 
 // if no email go back to login

@@ -22,10 +22,12 @@ if ($_SERVER["REQUEST_METHOD"]) {
 
     $_SESSION['email'] = $email;
 
-    // sql query to find user with the provided email and role
-    $sql = "SELECT * FROM fdm_users WHERE email = '$email' AND role = '$role'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
+    // prepared statements to find user with the provided email and role
+    $stmt = $conn->prepare("SELECT * FROM fdm_users WHERE email = ? AND role = ?");
+    $stmt->bind_param("ss", $email, $role);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
 
     $_SESSION['role'] = $row['role'];
 
@@ -59,9 +61,10 @@ if ($_SERVER["REQUEST_METHOD"]) {
         $mail->Body = $message;
         $mail->send(); //sends email
 
-        // updates user otp and otp expiry in database
-        $sql = "UPDATE fdm_users SET otp = '$otp', otp_expiry = '$otp_expiry' WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
+        // updates user otp and otp expiry in database using prepared statements
+        $stmt = $conn->prepare( "UPDATE fdm_users SET otp = ? , otp_expiry = ? WHERE email = ?");
+        $stmt->bind_param("sss", $otp, $otp_expiry, $email);
+        $stmt->execute();
 
         //user redirected to the otp verification page
         header("Location: otp.html");
