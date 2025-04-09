@@ -25,6 +25,7 @@
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="checkLogin.php">Login</a>
+                <a href="account.php">My Account</a>
             </nav>
         </div>
         </div>
@@ -51,7 +52,15 @@
     
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+                <!-- for more personal details, added location, age etc-->
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter Your Location" required>
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" placeholder="Enter Your age" required>
+
                 <input type = "hidden" name = "role" value = "consultant">
+
                 <div id="submit-buttons">
                     <button type="reset" id="clear-button">Clear Form</button>
                     <button type="submit" name="register" id="submit-button">Register</button>

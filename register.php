@@ -20,6 +20,8 @@ if (isset($_POST['register'])) {
         $email = validate($_POST['email']);
         $password = validate($_POST['password']);
         $role = validate($_POST['role']);
+        $age = validate($_POST['age']);
+        $location = validate($_POST['location']); 
 
         //statement to check if the email already exits in the database
         $registerationCheck = $conn->prepare("SELECT * FROM fdm_users WHERE email = ?");

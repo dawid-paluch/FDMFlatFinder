@@ -30,6 +30,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
+                <a href="account.php">My Account</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </div>
@@ -61,12 +62,12 @@
 
                 if ($query -> num_rows > 0) {
                     echo "<div id='tableContainer'>";
-                    echo "<form>";
+                    echo "<form id='propertyListForm' method='POST' action='consultantPropertySpecific.php'>";
                     while ($row = mysqli_fetch_assoc($query)) {
                         echo "<div class='tableRow'>";
                             echo "<div class='imageField'><img src='uploads/".$row['image_name']."' alt='Property Image'></div>";
                             echo "<div class='propertyInfo'>";
-                                echo "<button class='propertyDetailsButton' type='button' name='propertyDetailsButton' value='" . $row['propertyID'] . "'>";
+                                echo "<button class='propertyDetailsButton' type='submit' name='propertyId' value='" . $row['propertyID'] . "'>";
                                     echo "<div class='propertyDetailsButtonDiv'>";
                                         echo "<p class='addressField'>" . strtoupper($row['addressLine1']) . ", " . strtoupper($row['addressCityTown']) . ", " . strtoupper($row['addressPostcode']) . "</p>";
                                         echo "<div class='detailsField'>";

@@ -52,10 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // redirect to pages depending on role
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'consultant'){
-                    header("Location: consultantHomePage.html");
+                    header("Location: consultantHomepage.html");
                     exit();
                 } else {
-                    header("Location: landlordHomePage.html");
+                    header("Location: landlordHomepage.html");
                     exit();
                 }
                 exit();

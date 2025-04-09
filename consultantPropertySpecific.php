@@ -23,6 +23,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
+                <a href="account.php">My Account</a>
                 <a href="logout.php">Logout</a>
             </nav>
         </div>
@@ -36,7 +37,7 @@
             <h1>
                 Property Details
             </h1>
-            <div id="returnButtonDiv"><a href="searchProperty.php">Return to List of Properties</a></div>
+            <div id="returnButtonDiv"><a href="javascript:history.back()">Return to List of Properties</a></div>
             <?php
             session_start();
 
