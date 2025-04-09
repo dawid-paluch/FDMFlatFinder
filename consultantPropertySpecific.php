@@ -37,7 +37,7 @@
             <h1>
                 Property Details
             </h1>
-            <div id="returnButtonDiv"><a href="javascript:history.back()">Return to List of Properties</a></div>
+            <div id="returnButtonDiv"><a href="consultantHomePage.html">Return to Consultant Menu</a></div>
             <?php
             session_start();
 
