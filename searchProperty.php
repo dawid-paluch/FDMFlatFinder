@@ -124,10 +124,10 @@ include 'connection.php';
               $savedPropertyIds[] = $row['property_id'];
           }
 
-          if ($query->num_rows > 0) {
-                echo "<div id='tableContainer'>";
-              echo "<form id='propertyListForm' method='post' action='consultantPropertySpecific.php'>";
-              while ($row = mysqli_fetch_assoc($query)) {
+        if ($query->num_rows > 0) {
+            echo "<div id='tableContainer'>";
+            echo "<form id='propertyListForm' method='post' action='consultantPropertySpecific.php'>";
+            while ($row = mysqli_fetch_assoc($query)) {
                 echo "<div class='tableRow'>";
                     echo "<div class='imageField'><img src='uploads/".$row['image_name']."' alt='Property Image'></div>";
                     echo "<div class='propertyInfo'>";
@@ -156,16 +156,45 @@ include 'connection.php';
                 echo "</div>";
             }
             echo "</form></div>";
-          }
+        }
 
-          // Load and display SpareRoom JSON listings
-          $jsonFilename = "spareroom/spareroom_listings_{$city}.json";
+ 
+        $jsonFilename = "spareroom/spareroom_listings_{$city}.json";
+
+
+        function extractPriceValue($priceString) {
+            if (preg_match('/£\s?([\d,]+)(?:\.\d{2})?\s*(pcm|pw)?/i', $priceString, $matches)) {
+                $price = (int) str_replace(',', '', $matches[1]);
+                $unit = strtolower($matches[2] ?? 'pcm');
+        
+                // pw to pm 
+                if ($unit === 'pw') {
+                    $price = (int) round($price * 52 / 12);
+                }
+        
+                return $price;
+            }
+            return 0;
+        }
 
 
           
           if (file_exists($jsonFilename)) {
-              $jsonData = file_get_contents($jsonFilename);
-              $scrapedListings = json_decode($jsonData, true);
+            $jsonData = file_get_contents($jsonFilename);
+            $scrapedListings = json_decode($jsonData, true);
+            $minPrice = isset($_POST['minPrice']) ? (int)$_POST['minPrice'] : 0;
+            $maxPrice = isset($_POST['maxPrice']) ? (int)$_POST['maxPrice'] : 5000000;
+
+
+            $scrapedListings = array_filter($scrapedListings, function ($listing) use ($minPrice, $maxPrice) {
+                $priceValue = extractPriceValue($listing['Price']);
+                return $priceValue >= $minPrice && $priceValue <= $maxPrice;
+            });
+
+
+            usort($scrapedListings, function ($a, $b) {
+                return extractPriceValue($a['Price']) <=> extractPriceValue($b['Price']);
+            });
           } else {
               $scrapedListings = [];
           }
@@ -195,7 +224,7 @@ include 'connection.php';
               }
               echo "</form></div>";
           } else {
-              echo "<p>No SpareRoom listings found for '$city'.</p>";
+              echo "<p>No SpareRoom listings found.</p>";
           }
       } else {
         $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, description, type, bedrooms, bathrooms, price, image_name, dateUpdated FROM propertyList";
