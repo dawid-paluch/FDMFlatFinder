@@ -141,9 +141,7 @@ include 'connection.php';
           // ✅ Load and display SpareRoom JSON listings
           $jsonFilename = "spareroom/spareroom_listings_{$city}.json";
 
-          if (!file_exists($jsonFilename)) {
-              echo "<p style='color:red;'>❌ File not found: <code>$jsonFilename</code></p>";
-          }
+
           
           if (file_exists($jsonFilename)) {
               $jsonData = file_get_contents($jsonFilename);
