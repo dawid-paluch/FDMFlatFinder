@@ -33,7 +33,6 @@
     <div id="main">
         <form method="POST" action="process-reset.php">
             
-            <div class = "otp-container">
             <div id="formContainer">
                 <h1>
                     Reset Password
@@ -44,8 +43,7 @@
                 <input type = "password" name = "password" placeholder = "Enter new password" required>
                 <label for="confirm_password">Repeat password</label>
                 <input type = "password" name = "confirm_password" placeholder = "Repeat new password" required>
-                <button type = "submit">Reset</button>
-            </div>
+                <button id="resetPasswordConfirmButton" type = "submit">Reset</button>
             </div>
         </form> 
     </div>

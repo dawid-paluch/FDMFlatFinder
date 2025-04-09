@@ -28,7 +28,12 @@ if (isset($_POST['register'])) {
         $pattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/"; 
         if (!preg_match($pattern, $password)) {
             echo "<script>alert('Password must be at least 8 characters long and include at least one letter and one number.');</script>";
-            exit();
+
+            if ($role == 'consultant'){
+                echo "<script>window.location.href = 'registerConsultant.html';</script>";
+            } else {
+                echo "<script>window.location.href = 'registerLandlord.html';</script>";
+            }
         }
 
         //statement to check if the email already exits in the database
@@ -40,14 +45,41 @@ if (isset($_POST['register'])) {
 
         // if email exists, user alerted and redirected to login page
         if ($result->num_rows > 0) {
-            echo "<script>
-                alert('There is already an account with this email address.');
-                window.location.href = 'loginConsultant.html';
-                </script>";
-                exit();
+            if ($role == 'consultant'){
+                echo "<script>
+                    alert('There is already an account with this email. Please login');
+                    window.location.href = 'loginConsultant.html';
+                    </script>";
+            } else {
+                echo "<script>
+                    alert('There is already an account with this email. Please login.');
+                    window.location.href = 'loginLandlord.html';
+                    </script>";
+            }
         }
 
         $registerationCheck -> close();
+
+        // statement to check if the username already exists in the database
+        $usernameCheck = $conn->prepare("SELECT * FROM fdm_users WHERE username = ?");
+        $usernameCheck -> bind_param("s", $username);
+        $usernameCheck -> execute();
+        $usernameResult = $usernameCheck -> get_result();
+
+        // if username exists, user is alerted and redirected to associated registration page
+        if ($usernameResult->num_rows > 0) {
+            if ($role == 'consultant'){
+                echo "<script>
+                    alert('Username already exists. Please choose a different username.');
+                    window.location.href = 'registerConsultant.html';
+                    </script>";
+            } else {
+                echo "<script>
+                    alert('Username already exists. Please choose a different username.');
+                    window.location.href = 'registerLandlord.html';
+                    </script>";
+            }
+        }
 
         // password hashed for security
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
