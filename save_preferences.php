@@ -6,7 +6,7 @@ include "connection.php";
 
 //checks the user is logged in
 if(!isset($_SESSION['userId'])){
-    echo "Location: loginConsultant.html";
+    header("Location: loginConsultant.html");
     exit();
 }
 
