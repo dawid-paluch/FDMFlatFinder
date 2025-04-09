@@ -208,3 +208,10 @@ p{
     margin-bottom: 10px;
 }
 
+#resetPasswordConfirmButton{
+    grid-column: 1/ span 2;
+    margin-bottom: 10px;
+    width: 30%;
+    margin: 15px auto;
+    padding: 10px 20px;
+}
