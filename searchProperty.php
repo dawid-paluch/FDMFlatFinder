@@ -40,7 +40,7 @@ include 'connection.php';
       <input type="text" id="addressPostcode" name="addressPostcode">
 
       <label for="minPrice">Min Price (£):</label>
-      <input type="range" value="0" id="minPrice" name="minPrice" min="0" max="20000000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
+      <input type="range" value="0" id="minPrice" name="minPrice" min="0" max="5000000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
       <output>£0</output>
 
       <label for="bedrooms">Bedrooms:</label>
