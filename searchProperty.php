@@ -57,8 +57,8 @@ include 'connection.php';
       </select>
 
       <label for="maxPrice">Max Price (£):</label>
-      <input type="range" value="5000" id="maxPrice" name="maxPrice" min="0" max="5000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
-      <output>£5,000</output>
+      <input type="range" value="5000000" id="maxPrice" name="maxPrice" min="0" max="5000000" step="100" oninput="this.nextElementSibling.value = '£'+Number(this.value).toLocaleString();">
+      <output>£5,000,000</output>
 
       <label for="bathrooms">Bathrooms:</label>
       <input type="number" id="bathrooms" name="bathrooms" min="1" onwheel="disableScroll(event)">
@@ -74,10 +74,9 @@ include 'connection.php';
       if (!empty($_POST)) {
           // Get the city from the form
           $city = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $_POST['addressCityTown']));
-          echo "<p>🔍 City slug: <strong>$city</strong></p>";
 
           // Start building SQL query
-          $sql = "SELECT propertyId, addressLine1, addressCityTown, addressPostcode, description, type, bedrooms, bathrooms, price, image_name, dateUpdated FROM propertyList WHERE";
+          $sql = "SELECT * FROM propertyList WHERE";
 
           // Get form inputs
           $addressLine1 = $_POST['addressLine1'];
@@ -128,7 +127,7 @@ include 'connection.php';
                 echo "<div class='tableRow'>";
                     echo "<div class='imageField'><img src='uploads/".$row['image_name']."' alt='Property Image'></div>";
                     echo "<div class='propertyInfo'>";
-                        echo "<button class='propertyDetailsButton' name='propertyId' type='submit' name='propertyDetailsButton' value='" . $row['propertyId'] . "'>";
+                        echo "<button class='propertyDetailsButton' name='propertyId' type='submit' name='propertyDetailsButton' value='" . $row['propertyID'] . "'>";
                             echo "<div class='propertyDetailsButtonDiv'>";
                                 echo "<p class='addressField'>" . strtoupper($row['addressLine1']) . ", " . strtoupper($row['addressCityTown']) . ", " . strtoupper($row['addressPostcode']) . "</p>";
                                     echo "<div class='detailsField'>";
@@ -140,13 +139,13 @@ include 'connection.php';
                                 echo "<p class='descriptionField'>" . $row['description'] . "</p>";
                             echo "</div>";
                         echo "</button>";
-                        echo "<div class='bottomField' data-id='" . $row['propertyId'] . "'>";
+                        echo "<div class='bottomField' data-id='" . $row['propertyID'] . "'>";
                             echo "<p class='dateUpdated'>Date Updated: " . $row['dateUpdated'] . "</p>";
-                            if (in_array($row['propertyId'], $savedPropertyIds)){
-                                echo "<button id='saveButton' class='saveButton saved' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                            if (in_array($row['propertyID'], $savedPropertyIds)){
+                                echo "<button id='saveButton' class='saveButton saved' type='button' name='saveProperty' value='" . $row['propertyID'] . "'>Save</button>";
                             }
                             else {
-                                echo "<button id='saveButton' class='saveButton' type='button' name='saveProperty' value='" . $row['propertyId'] . "'>Save</button>";
+                                echo "<button id='saveButton' class='saveButton' type='button' name='saveProperty' value='" . $row['propertyID'] . "'>Save</button>";
                             }
                         echo "</div>";
                     echo "</div>";
