@@ -1,5 +1,9 @@
 # FDMFlatFinder
 
+##### Developed by:
+
+#### Talhah Anwar, Dawid Paluch, Aaron Parnwany Riaz Rahman, Ruhal Kanth, Bethel Woldu
+
 This app is designed for FDM Consultants looking to relocate due to work, and remain close to clients.
 
 ## Prerequisties
