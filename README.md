@@ -2,7 +2,7 @@
 
 ##### Developed by:
 
-##### Talhah Anwar, Dawid Paluch, Aaron Parnwany Riaz Rahman, Ruhal Kanth, Bethel Woldu
+##### Talhah Anwar, Dawid Paluch, Aaron Parwany, Riaz Rahman, Ruhal Kanth, Bethel Woldu
 
 This app is designed for FDM Consultants looking to relocate due to work, and remain close to clients, while making the process of finding a flat easier.
 
@@ -25,5 +25,6 @@ git clone https://github.qmul.ac.uk/ec23075/FDMFlatFinder.git
 
 ## Running the Project
 ### Open your web browser and go to:
-http://localhost/FDMFlatFinder 
+http://localhost/FDMFlatFinder/mainpage.html
+
 
