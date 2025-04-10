@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# this file is used to scrape the listings from the website spareroom.co.uk
+# it uses the playwright library to scrape the listings
+# it uses the regex library to extract the price, location, description and title from the html
 from playwright.sync_api import sync_playwright
 import re
 import csv

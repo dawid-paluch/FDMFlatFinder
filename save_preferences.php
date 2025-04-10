@@ -1,4 +1,8 @@
 <?php
+// PHP file responsible for saving user preferences
+// This file handles the form submission for saving user preferences. It validates the input data and updates the user's preferences in the database. It also includes a connection to the database and provides feedback to the user upon successful or failed preference saving.
+// It ensures that the user is logged in before allowing them to save their preferences.
+
 session_start();
 
 //database connection

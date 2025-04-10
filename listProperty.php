@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+//PHP file responsible for listing a property
+// This file handles the form submission for listing a property by a landlord. It validates the input data, processes the image upload, and inserts the property details into the database.
+// It also includes a connection to the database and provides feedback to the user upon successful or failed property listing.
+
 //connects to database
 include 'connection.php';
 
@@ -10,6 +14,7 @@ function validate($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+
 
 if (isset($_POST['listProperty'])) {
 
@@ -35,7 +40,9 @@ if (isset($_POST['listProperty'])) {
         $sql = "INSERT INTO propertyList (userId, addressLine1, addressLine2, addressCityTown, addressPostcode, description, price, bedrooms, bathrooms, type, image_name, availability) VALUES ('$userId', '$addressLine1', '$addressLine2', '$addressCityTown', '$addressPostcode', '$description', '$price', '$bedrooms', '$bathrooms', '$type', '$image_name', '$availability')";
         $query = mysqli_query($conn, $sql);
 
+        // checks if the query is successful and image is uploaded
         if ($query) {
+            
             move_uploaded_file($image_tmp, "uploads/$image_name");
             echo "<script>        
                 alert('Property listed successfully');

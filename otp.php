@@ -1,4 +1,7 @@
 <?php
+// PHP file responsible for OTP verification
+// This file handles the OTP verification process after the user has logged in. It checks if the OTP entered by the user matches the one sent to their email, and if it is still valid. If successful, it redirects the user to their respective homepage based on their role.
+// It also includes a connection to the database and provides feedback to the user upon successful or failed OTP verification.
 
 session_start();
 

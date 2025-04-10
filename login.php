@@ -1,4 +1,6 @@
 <?php
+// PHP file responsible for login functionality
+// This file handles the form submission for user login. It validates the input data, checks the credentials against the database, and sends a one-time password (OTP) to the user's email for verification. It also includes a connection to the database and provides feedback to the user upon successful or failed login.
 
 session_start();
 

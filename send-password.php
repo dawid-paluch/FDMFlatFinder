@@ -1,4 +1,6 @@
 <?php
+// PHP file responsible for sending password reset email
+// This file handles the password reset process by generating a unique token, storing it in the database, and sending an email to the user with a link to reset their password. It uses PHPMailer for sending emails and includes error handling for email sending failures. It also includes a connection to the database and provides feedback to the user upon successful or failed email sending.
 
 // imports PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;

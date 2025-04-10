@@ -1,4 +1,6 @@
 <?php
+//* PHP file responsible for resetting password
+// This file handles the password reset process after the user has clicked on the link sent to their email. It checks if the token is valid and not expired, and if so, redirects the user to the reset password page. It also includes a connection to the database and provides feedback to the user upon successful or failed token validation.
 
 //gets token from URL and hashes it
 $token = $_GET['token'];
