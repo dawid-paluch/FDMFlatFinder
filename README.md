@@ -21,7 +21,11 @@ git clone https://github.qmul.ac.uk/ec23075/FDMFlatFinder.git
 
 #### 3. Start Apache and MySQL from the XAMPP control panel.
 
-#### 4. Open phpMyAdmin and import the SQL file to set up the database
+#### 4. Start phpMyAdmin and import the SQL file to set up the database
+
+##### - Create a new database (e.g. 'usersfdm')
+##### - Import the 'usersfdm.sql' file
+##### - Make sure the 'connection.php' matches the DB name
 
 ## Running the Project
 ### Open your web browser and go to:
