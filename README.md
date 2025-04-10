@@ -11,7 +11,7 @@ Before running the project, ensure that you have the following installed:
 #### 1. Clone the Repositry
 Begin by cloning the project from the repositry to you local machine
 
-https://github.qmul.ac.uk/ec23075/FDMFlatFinder.git
+git clone https://github.qmul.ac.uk/ec23075/FDMFlatFinder.git
 
 #### 2. Start Apache and MySQL from the XAMPP control panel.
 
