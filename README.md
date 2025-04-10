@@ -1,6 +1,6 @@
 # FDMFlatFinder
 
-This app is designed for FDMConsultants looking to relocate due to work, and remain close to clients.
+This app is designed for FDM Consultants looking to relocate due to work, and remain close to clients.
 
 ## Prerequisties
 Before running the project, ensure that you have the following installed:
