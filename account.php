@@ -9,7 +9,6 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/account.css"/>
   
   <title>FDM Flat Finder</title>
@@ -24,9 +23,6 @@ session_start();
 
         <div id="nav">
             <nav>
-                <a href="mainpage.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
                 <a href="account.php">My Account</a>
                 <a href="logout.php">Logout</a>
             </nav>

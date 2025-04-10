@@ -22,9 +22,6 @@ include 'connection.php';
       </div>
       <div id="nav">
         <nav>
-          <a href="mainpage.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
           <a href="account.php">My Account</a>
           <a href="Tips.html">Tips</a>
           <a href="logout.php">Logout</a>

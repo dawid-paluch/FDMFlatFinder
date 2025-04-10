@@ -1,12 +1,102 @@
+:root {
+    --dark-color: #303030;
+    --light-color: #a8a8a8;
+    --primary-color: #c6ff00;
+    --accent-color: #1e1e1e;
+    --dark-accent-color: #2e3d72;
+}
+
+body{
+    background-color: #f0f8ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+#background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    --mask: linear-gradient(to bottom, 
+      rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 15%, 
+      rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0%)
+      100% 50% / 100% 100% repeat-x;
+    mask: var(--mask)
+}
+
+header{
+    background-color: var(--primary-color);
+    display: inline-block;
+    width: 100%;
+    border-bottom: var(--accent-color) 4px solid;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+#logo {
+    background-color: var(--accent-color);
+    float: left;
+    padding: 20px;
+    font-weight: bold;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#logo a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#nav{
+    float: right;
+    padding: 25px;
+    background-color: var(--primary-color);
+}
+
+#nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--dark-color);
+    border: var(--primary-color) 3px solid;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+#nav a:hover {
+    color: black;
+    border-color: var(--dark-accent-color);
+}
+
+#nav a:active {
+    color: var(--light-color);
+    border-style: outset;
+}
+
+.main{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+}
+
+
 #accountDetailsContainer{
     grid-template-columns: 40% 60%;
     grid-template-rows: auto auto auto auto auto;
     z-index: 10;
-    background-color: rgba(180,180,180,0.8);
     border-radius: 15px;
     width: 40%;
     height: 40%;
-    margin: 300px auto;
+    margin: 150px auto;
+    padding: 20px;
 }
 
 #accountDetailsContainer h1{
@@ -17,7 +107,7 @@
 
 #accountDetailsContainer a{
     border-radius: 15px;
-    background-color:  rgba(210, 210, 210, 0.4);
+    background-color:  rgba(227, 227, 227, 0.6);
     border: solid 3px transparent;
     text-decoration: none;
     color: black;
