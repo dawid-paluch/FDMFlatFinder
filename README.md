@@ -13,9 +13,11 @@ Begin by cloning the project from the repositry to you local machine
 
 git clone https://github.qmul.ac.uk/ec23075/FDMFlatFinder.git
 
-#### 2. Start Apache and MySQL from the XAMPP control panel.
+#### 2. Move the project to the XAMPP htdocs directory.
 
-#### 3. Open phpMyAdmin and import the SQL file to set up the database
+#### 3. Start Apache and MySQL from the XAMPP control panel.
+
+#### 4. Open phpMyAdmin and import the SQL file to set up the database
 
 ## Running the Project
 ### Open your web browser and go to:
