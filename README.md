@@ -4,6 +4,12 @@
 
 ##### Talhah Anwar, Dawid Paluch, Aaron Parwany, Riaz Rahman, Ruhal Kanth, Bethel Woldu
 
+---
+
+This project was developed for coursework of the Software Engineering module in the second year of studying Computer Science at Queen Mary University of London. All branches of the repository represents the original version of this project, except the 'hosted-development' branch. The 'hosted-development' branch is a edited version of the final coursework submission, for the purpose of displaying a version of all pages of the website, hosted on Github pages without the backend. These changes were needed as GitHub Pages only supports static content. While the changes were needed to allow for hosting in this way, the 'hosted-development' represents the design of the full website. Apart from this section, the rest of the README remains unchanged from the original coursework submission.
+
+---
+
 This app is designed for FDM Consultants looking to relocate due to work, and remain close to clients, while making the process of finding a flat easier.
 
 ## Prerequisties
