@@ -23,7 +23,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="checkLogin.php">Login</a>
+                <a href="loginConsultant.html">Login</a>
             </nav>
         </div>
         </div>
@@ -32,7 +32,7 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="login.php">
+        <form method="POST" action="">
             <div id="formContainer">
                 <h1>
                     Login as Landlord
@@ -58,4 +58,20 @@
             </div>
         </form> 
     </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert(`Logged in as ${email}. In functional version would be sent otp 2fac email. To see the one time password 2fac, please login as a consultant on this version.`);
+                window.location.href = "landlordHomePage.html";
+            } else {
+                alert('Please enter a valid email and password.');
+            }
+        });
+    </script>
 </body>

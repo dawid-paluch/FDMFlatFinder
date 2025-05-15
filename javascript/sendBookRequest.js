@@ -1,25 +1,31 @@
+
+bookedProperties = ['property1'];
+bookedProperties.push('propertyId');
+sessionStorage.setItem('bookedProperties', JSON.stringify(bookedProperties));
+
 document.querySelectorAll('.bookButton').forEach(button => {
     button.addEventListener('click', async function () {
       const propertyDiv = this.closest('.bookingButtons');
       const propertyId = propertyDiv.getAttribute('data-id');
   
       try {
-        const response = await fetch('sendBookRequest.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ property_id: propertyId}) // use real user_id from session eventually
-        });
-  
-        const result = await response.json();
-  
-        if (result.success) {
-          if (result.action === 'saved') {
-            this.classList.add('booked');
-          } else if (result.action === 'unsaved') {
-            this.classList.remove('booked');
-          }
+        let previousSaved = sessionStorage.getItem('savedProperties');
+        if (previousSaved) {
+          previousSaved = JSON.parse(previousSaved);
         } else {
-          alert('Failed to update saved status: ' + (result.error || 'Unknown error'));
+          previousSaved = [];
+        }
+        if (previousSaved.includes(propertyId)) {
+          previousSaved = previousSaved.filter(id => id !== propertyId);
+          sessionStorage.setItem('savedProperties', JSON.stringify(previousSaved));
+          this.textContent = 'Book Now';
+          this.classList.remove('booked');
+        }
+        else {
+          previousSaved.push(propertyId);
+          sessionStorage.setItem('savedProperties', JSON.stringify(previousSaved));
+          this.textContent = 'Booked';
+          this.classList.add('booked');
         }
       } catch (err) {
         console.error('Fetch failed', err);

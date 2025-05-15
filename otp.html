@@ -31,7 +31,7 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="otp.php">
+        <form method="POST" action="">
             <div class="otp-container">
                 <h1>Enter OTP</h1>
                 <div class="otp-text">
@@ -43,4 +43,19 @@
         </form> 
     </div>
     </div>
+    
+    <script>
+        document.getElementById('otp-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const otp = document.getElementById('otp').value;
+
+            if (otp) {
+                alert(`On a correct OTP, the user would be redirected to the corresponding home page as they are logged in. In this version the otp only existing for consultant only sends the user to the consultant homepage.`);
+                window.location.href = "consultantHomePage.html";
+            } else {
+                alert('Please enter a valid email and password.');
+            }
+        });
+    </script>
 </body>

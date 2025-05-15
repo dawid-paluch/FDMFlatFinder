@@ -1,0 +1,237 @@
+:root {
+    --dark-color: #303030;
+    --light-color: #a8a8a8;
+    --primary-color: #c6ff00;
+    --accent-color: #1e1e1e;
+    --dark-accent-color: #2e3d72;
+} 
+
+body{
+    background-color: rgb(199, 208, 205);
+}
+
+#background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.7;
+    --mask: linear-gradient(to bottom, 
+      rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 15%, 
+      rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0%)
+      100% 50% / 100% 100% repeat-x;
+    mask: var(--mask)
+}
+
+#main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(155, 156, 158, 0.6);
+    width: 90%;
+    margin: 4.5em auto;
+    border-radius: 1em;
+    padding: 0.8em;
+}
+
+#main > div:last-child{
+    grid-column: span 2;
+}
+
+h1{
+    grid-column: span 2;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    text-align: center;
+    font-size: 3.5em;
+    padding: 0.4em;
+    text-decoration: underline;
+}
+
+p{
+    grid-column: span 2;
+    font-size: 1.2em;
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+    text-align: justify;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+    padding: 0.1em;
+    border: transparent solid 0.1em;
+    border-radius: 0.8em;
+}
+
+a:hover {
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+a:active {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+h2{
+    grid-column: span 2;
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.5em;
+}
+
+.button{
+    display: block;
+    margin: 1.5em auto;
+    margin-bottom: 0em;
+    padding: 0.5em;
+    background-color: rgb(47, 47, 47);
+    color: white;
+    border: solid 0.1em rgb(47, 47, 47);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    width: 25em;
+}
+
+.button:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(47, 47, 47);
+    color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+}
+
+.button:active{
+    background-color: rgb(115, 115, 115);
+    border-color: black;
+    color: black;
+    transition-duration: 0.3s;
+}
+
+.smallButton{
+    display: block;
+    margin: 0.6em auto;
+    padding: 0.5em;
+    background-color: rgb(106, 106, 106);
+    color: white;
+    border: solid 0.1em rgb(106, 106, 106);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    width: 28em;
+}
+
+.smallButton:hover{
+    background-color: rgb(224, 224, 224);
+    border-color: rgb(34, 34, 34);
+    color: black;
+    transition-duration: 0.3s;
+}
+
+.smallButton:active{
+    background-color: black;
+    border-color: white;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+
+
+
+
+/*Footer has been taken from the footer created for the gcse maths quiz website project with slight changes. Most kept the same.*/
+
+/**General footer container
+ * Creates the dimensions for the footer that holds the footer links
+*/
+.footer{
+    display: block;
+    width: 100%;
+    height: 14.5em;
+    background-color: rgb(43, 43, 43);
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0.5em 0;
+}
+
+/**Styling for general footer elements
+ * This includes some general styling for the footer elements such as the text color
+*/
+.footer *{
+    color: rgb(172, 172, 172);
+    font-size: 1em;
+    text-align: left;
+}
+
+
+/**Styling of footer contents
+ * Creates the styling for the footer content and footer links and the hover and active states
+*/
+
+/*Styling for the container of the footer links*/
+.footerContent{
+    width: 100%;
+    display: inline-block;
+    padding-left: 5.5em;
+    margin-top: 1em;
+}
+
+.footerTitle{
+    margin: 0.5em 0em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.footerContent a, .contactDetail{
+    font-size: 1em;
+    margin-right: 12em;
+    margin-left: 2em;
+    text-decoration: none;
+}
+
+.footer a{
+    color: rgb(172, 172, 172);
+}
+
+.footer a:hover{
+    text-decoration: underline;
+    border-color: transparent;
+    color: rgb(172, 172, 172);
+    transition-duration: 0.3s;
+}
+
+.footer a:active{
+    color: rgb(255, 255, 255)
+
+}
+
+/**Styling for footer text
+ * Creates styling for the footer text describing website author
+*/
+.credits{
+    color: rgb(94, 94, 94);
+    font-size: 0.9em;
+    margin: 0 1.5em;
+    padding: 0.5em;
+    text-align: center;
+    font-style: italic;
+}
+
+.line{
+    border: 0;
+    border-bottom: solid rgb(135, 135, 135) 2px;
+    width: 95%;
+    margin: 0.5em auto;
+}

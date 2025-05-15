@@ -24,8 +24,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="checkLogin.php">Login</a>
-                <a href="account.php">My Account</a>
+                <a href="loginConsultant.html">Login</a>
             </nav>
         </div>
         </div>
@@ -35,7 +34,7 @@
 
 
     <div id="main">
-        <form method="POST" action="register.php">
+        <form method="POST" action="">
             <div id="formContainer">
                 <h1>
                     Register as Consultant
@@ -71,4 +70,23 @@
             </div>
         </form> 
     </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const location = document.getElementById('location').value;
+            const age = document.getElementById('age').value;
+
+            if (username && email && password && location && age) {
+                alert(`New account would be created with the specified details and user would be sent back to login screen.`);
+                window.location.href = "loginConsultant.html";
+            } else {
+                alert('Please enter a valid email and password.');
+            }
+        });
+    </script>
 </body>

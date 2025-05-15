@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/landlordHomepage.css" />
+  <link rel="stylesheet" href="css/account.css"/>
+  
   <title>FDM Flat Finder</title>
 </head>
 
@@ -30,13 +29,23 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <div id="landlordHomepageContainer">
+        <div id="accountDetailsContainer">
             <h1>
-                Landlord Page
+                Your Personal Details
             </h1>
-            <a href="listProperty.html">List Property</a>
-            <a href="viewProperty.html">View Properties</a>
-            <a href="account.html">Account Settings</a>
+            <div id="detailtype-buttons">
+                <a id="returnButton" href="javascript:history.back()">Return to Menu</a>
+
+                <a id="email-button" href="changeEmail.html">Change Email</a>
+
+                <a id="password-button" href="changePassword.html">Change Password</a>
+
+                <a id="username-button" href="changeUsername.html">Change Username</a>
+
+                <a id="location-button" href="changeLocation.html">Change Location</a>
+                        
+                <a id="age-button" href="changeAge.html">Change Age</a>
         </div>
     </div>
 </body>
+</html>

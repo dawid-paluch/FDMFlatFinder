@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/viewProperty.css" />
+  <title>FDM Flat Finder</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="account.html">My Account</a>
+                <a href="Tips.html">Tips</a>
+                <a href="mainpage.html">Logout</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+
+    <div id="main">
+        <div id="viewPropertyContainer">
+            <h1>
+                List of Properties Page
+            </h1>
+            <div id="returnButtonDiv"><a href="landlordHomePage.html">Return to Landlord Menu</a></div>
+            <div id='tableContainer'>
+                <div id='tableHead'><p class='tableField line1Field'>Address</p><p class='tableField cityTownField'>City/Town</p><p class='tableField postcodeField'>Postcode</p><p class='tableField bookedField'>Booked</p><p class='tableField priceRow'>Price (£)</p></div>
+                <form action='' method='post'>
+                    <button id='property1Button' class='tableButton' type='submit' name='propertyId' value='propertyId here'>
+                        <div class='tableRow'>
+                        <p class='tableField line1Field'>123 Random Lane</p>
+                        <p class='tableField cityTownField'>Fake Town</p>
+                        <p class='tableField postcodeField'> AB1 2CD</p>
+                        <p class='tableField bookedField unbooked'>Available</p>
+                        <p class='tableField priceRow'>£100</p>
+                    </div>
+                    </button>
+                </form>
+                <form action='' method='post'>
+                    <button id='property2Button' class='tableButton' type='submit' name='propertyId' value='propertyId here'>
+                        <div class='tableRow'>
+                        <p class='tableField line1Field'>456 Another Road</p>
+                        <p class='tableField cityTownField'>Fake Town</p>
+                        <p class='tableField postcodeField'>EF3 4GH</p>
+                        <p class='tableField bookedField booked'>Booked</p>
+                        <p class='tableField priceRow'>£0.01</p>
+                    </div>
+                    </button>
+                </form>
+            </div>
+            No properties found. (if no properties are listed this would be displayed with no table of properties)
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('property1Button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            alert(`User would be sent to a more detailed property specific page. For this version of this website, only the button to the first property takes you to this page.`);
+            window.location.href = "landlordPropertySpecific.html";
+        });
+
+        document.getElementById('property2Button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            alert(`User would be sent to a more detailed property specific page. For this version of this website, only the button to the first property takes you to this page.`);
+        });
+    </script>
+</body>

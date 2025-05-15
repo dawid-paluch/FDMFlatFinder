@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Accommodation Preferences</title>
+    <link rel="stylesheet" href="css/editPreferences.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="account.php">My Account</a>
+                <a href="logout.php">Logout</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+    <div class="main">
+        <h1>Edit Accommodation Preferences</h1>
+        <div id="returnButtonDiv"><a href="">Return to Consultant Menu</a></div>
+        <form action="save_preferences.php" method="POST">
+            <div class='form-group'>
+                <label for='location'>Preferred City/Town</label>
+                <input type='text' id='location' name='location' placeholder='Enter City/Town' value=''>
+            </div>
+            <div class='form-group'>
+                <label for='postcode'>Preferred Postcode</label>
+                <input type='text' id='postcode' name='postcode' placeholder='Enter Postcode' value=''>
+            </div>
+            <div class='form-group'>
+                <label for='maxPrice'>Maximum Price(£)</label>
+                <input type='number' id='maxPrice' name='maxPrice' min='100' max='5000000' step='100' onwheel='disableScroll(event)' placeholder='Enter Price' value=''>
+            </div>
+            <div class='form-group'>
+                <label for='bedrooms'>Preferred Bedrooms</label>
+                <input type='number' id='bedrooms' name='bedrooms' placeholder='Enter Bedrooms' min='1' onwheel='disableScroll(event)' value=''>
+            </div>
+            <div class='form-group'>
+                <label for='bathrooms'>Preferred Bathrooms</label>
+                <input type='number' id='bathrooms' name='bathrooms' placeholder='Enter Bathrooms' min='1' onwheel='disableScroll(event)' value=''>
+            </div>
+            <div class='form-group'>
+                <label for='propertyType'>Property Type</label>
+                <select name='propertyType' id='propertyType'>
+                    <option value='House'>House</option>
+                    <option value='Apartment'>Apartment</option>
+                    <option value='Flat'>Flat</option>
+                    <option value='Studio'>Studio</option>
+                </select>
+            </div>
+
+            <button id="submit-button" type="submit">Save Preferences</button>
+        </form>
+    </div>
+    <div id="emptyFillerDiv"></div>
+    <script src="javascript/inputNumberDisableScroll.js"></script>
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert(`Preferences that are entered into the page would be saved within the system before sending the user back to the consultant homepage.`);
+            window.location.href = "consultantHomePage.html";
+        });
+    </script>
+</body>
+
+</html>

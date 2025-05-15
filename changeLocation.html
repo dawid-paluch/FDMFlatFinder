@@ -21,8 +21,8 @@
 
         <div id="nav">
             <nav>
-                <a href="account.php">My Account</a>
-                <a href="logout.php">Logout</a>
+                <a href="account.html">My Account</a>
+                <a href="mainpage.html">Logout</a>
             </nav>
         </div>
         </div>
@@ -50,4 +50,13 @@
             </div>
         </form> 
     </div>
+    
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            alert(`New account would be created with the specified details and user would be sent back to login screen.`);
+            history.back();
+        });
+    </script>
 </body>

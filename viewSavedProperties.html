@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/viewSavedProperties.css" />
+  <title>FDM Flat Finder</title>
+</head>
+
+<body>
+    <header></header>
+</body>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="account.php">My Account</a>
+                <a href="Tips.html">Tips</a>
+                <a href="logout.php">Logout</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <div id="main">
+        <div id="savedPropertiesContainer">
+            <h1>
+                View Saved Properties
+            </h1>
+            <div id="returnButtonDiv"><a href="consultantHomePage.html">Return to Consultant Menu</a></div>
+                <div id='tableContainer'><form id='propertyListForm' method='POST' action=''>
+                        <div class='tableRow'>
+                            <div class='imageField'><img src='uploads/house image 1.jpeg' alt='Property Image'></div>
+                            <div class='propertyInfo'>
+                                <button id="submit-button" class='propertyDetailsButton' type='submit' name='propertyId' value='property1'>
+                                    <div class='propertyDetailsButtonDiv'>
+                                    <p class='addressField'>456 Another Road, Fake Town, EF3 4GH</p>
+                                    <div class='detailsField'>
+                                        <p class='priceRow'>Price: £0.01</p>
+                                        <p class='typeRow'>Type: Flat</p>
+                                        <p class='bedroomsRow'>Bedrooms: 1</p>
+                                        <p class='bathroomsRow'>Bathrooms: 1</p>
+                                    </div>
+                                    <p class='descriptionField'>This is a very nice flat.</p>
+                                    </div>
+                                </button>
+                                <div class='bottomField' data-id='property1'>
+                                    <p class='dateUpdated'>Date Updated: 15-05-2025</p>
+                                    <button id='saveButton' class='saveButton saved' type='button' name='saveProperty' value='property1'>Saved!</button>
+                                </div>
+                            </div>
+                        </div>
+                </form></div>
+            No properties found. (this only appears if the logged in consultant has not saved any properties)
+        </div>
+    </div>
+    <script src="javascript/inputNumberDisableScroll.js"></script>
+    <script src="javascript/saveProperty.js"></script>
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            alert(`The user will be sent to a page with all of the property details. For this version of the website, there is only a link to the second property for an example of what the page looks like.`);
+            window.location.href = "consultantPropertySpecific.html";
+        });
+    </script>
+</body>

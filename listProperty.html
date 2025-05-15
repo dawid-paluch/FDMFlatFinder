@@ -34,7 +34,7 @@
         <div id="listPropertyContainer">
             <h1>List Property</h1>
             <div id="returnButtonDiv"><a href="landlordHomePage.html">Return to Landlord Menu</a></div>
-            <form action="listProperty.php" method="post" enctype="multipart/form-data" id="listPropertyForm">
+            <form action="" method="post" enctype="multipart/form-data" id="listPropertyForm">
                 <label for="addressLine1">Address Line 1:<div class="requiredAsterisk">*</div></label>
                 <input type="text" id="addressLine1" name="addressLine1" placeholder="Enter Address Line 1" autofocus required>
 
@@ -103,4 +103,28 @@
     </div>
     <script src="javascript/availabilityCalendar.js"></script>
     <script src="javascript/inputNumberDisableScroll.js"></script>
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const addressLine1 = document.getElementById('addressLine1').value;
+            const addressLine2 = document.getElementById('addressLine2').value;
+            const addressCityTown = document.getElementById('addressCityTown').value;
+            const addressPostcode = document.getElementById('addressPostcode').value;
+            const description = document.getElementById('description').value;
+            const price = document.getElementById('price').value;
+            const bedrooms = document.getElementById('bedrooms').value;
+            const bathrooms = document.getElementById('bathrooms').value;
+            const type = document.getElementById('type').value;
+            const image = document.getElementById('image').files[0];
+            const availability = document.getElementById('availability').value;
+
+            if (addressLine1 && addressCityTown && addressPostcode && description && price && bedrooms && bathrooms && type && image) {
+                alert(`Property listed successfully! In the real version, the data would be sent to the server for processing.`);
+                window.location.href = "landlordHomePage.html";
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
 </body>

@@ -22,7 +22,7 @@
                 <a href="mainpage.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="checkLogin.php">Login</a>
+                <a href="loginConsultant.html">Login</a>
             </nav>
         </div>
         </div>
@@ -31,7 +31,7 @@
     <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
 
     <div id="main">
-        <form method="POST" action="login.php">
+        <form method="POST" action="consultantHomePage.html">
             <div id="formContainer">
                 <h1>
                     Login as Consultant
@@ -49,7 +49,7 @@
                <div id="submit-buttons">
                    <button type="reset" id="clear-button">Clear Form</button>
                    <button type="submit" id="submit-button">Login</button>
-                   <a href = "forgot_password.html">Forgot Password?</a>
+                   <a class="submitButtonsLink" href = "forgot_password.html">Forgot Password?</a>
                </div>
                <div id="alternativeAccess">
                    <p><a href = "registerConsultant.html">Register as a Consultant</a></p>
@@ -57,4 +57,21 @@
             </div>
         </form> 
     </div>
+
+    <script>
+        let submitButton = document.getElementById("submit-button");
+        submitButton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert(`In functional version of the system, user would be sent one time password 2fac for ${email}. In this version, this only happens for the consultant login.`);
+                window.location.href = "otp.html";
+            } else {
+                alert('Please enter a valid email and password.');
+            }
+        });
+    </script>
 </body>

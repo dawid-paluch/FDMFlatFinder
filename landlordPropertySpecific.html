@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/landlordPropertySpecific.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <title>Web Dev Coursework</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+        <div id="logo">
+            <a href="mainpage.html">FlatFinderFDM</a>
+        </div>
+
+        <div id="nav">
+            <nav>
+                <a href="account.html">My Account</a>
+                <a href="mainpage.html">Logout</a>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+    <img id="background-image"src="images/homepage-stock-photo.jpg" alt="property photo" />
+
+    <div id="main">
+        <div id="propertyDetailsContainer">
+            <h1>
+                Property Details
+            </h1>
+            <div id="returnButtonDiv"><a href="viewProperty.html">Return to List of Properties</a></div>
+            
+            <div class='propertyDetailsDiv'>
+                <div class='imageField'><img src='uploads/house image 1.jpeg' alt='Property Image'></div>
+                <div class='propertyInfo'>
+                    <p class='addressField'>123 Random Lane, Fake Town, AB1 2CD</p>
+                    <div class='detailsField'>
+                        <p class='priceRow'>Price: £100</p>
+                        <p class='typeRow'>Type: House</p>
+                        <p class='bedroomsRow'>Bedrooms: 2</p>
+                        <p class='bathroomsRow'>Bathrooms: 1</p> 
+                    </div>
+                    <p class='descriptionField'>This is a very nice house.</p>
+                </div>
+                <div class='availabilityCalendarContainer'>
+                    <h2>Current Availability Calendar</h2>
+                    <input type='hidden' id='availabilityData' value="['2025-5-18', '2025-5-19', '2025-5-20', '2025-5-29', '2025-5-28', '2025-5-31', '2025-6-22', '2025-6-21', '2025-6-12', '2025-6-11', '2025-6-30']">
+                    <div id='calendarHead'>
+                        <button id='prev' class='btn disabled'><span class='material-symbols-outlined'>arrow_back</span></button>
+                        <div id='month-year'></div>
+                        <button id='next' class='btn'><span class='material-symbols-outlined'>arrow_forward</span></button>
+                    </div>
+                    <div id='weekdays'>
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div id='days'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="emptyFillerDiv"></div>
+    <script src="javascript/availabilityCalendarViewing.js"></script>
+</body>
